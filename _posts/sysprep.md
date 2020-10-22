@@ -1,3 +1,10 @@
+---
+layout: post
+title: Sysprep使用
+date: 2020-10-20 
+tags: sysprep    
+---
+
 Sysprep程序是微软公司用来配置Microsoft Windows全新安装的一个工具，是为方便企业用户部署系统而设计的。
 
 ## Sysprep使用
