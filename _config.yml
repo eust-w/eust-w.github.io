@@ -1,7 +1,7 @@
 # Basic
 title: 吴龙涛
-subtitle: 个人站
-description: 欢迎来到我的个人站~
+subtitle: 知识仓库
+description: keep it simple, stupid
 # 头像里面的标题
 avatarTitle: eust-w
 # 头像里面的描述
@@ -12,32 +12,32 @@ url: "https://eust-w.cn"
 enableToc: true
 
 # Comment
-comment:
+# comment:
     # livere: MTAyMC81MDk5NC8yNzQ3Ng  # https://www.livere.com
-    disqus: leopard
+    # disqus: leopard
     # uyan: 2143225  # 有言id,登录有言官网申请
 
 # Social
 social:
-    weibo: 5366874726 
+    # weibo: 5366874726 
     github: eust-w
-    # zhihu: panpanleopard
+    zhihu: 吴龙涛
     # juejin: xxx
-    jianshu: 2ada30d8d0f7
+    # jianshu: 2ada30d8d0f7
     # twitter: 
-    mail: eust-w@icloud.com
+    mail: eustancewu@gmail.com
 
 
 # 百度统计 
 # 使用博客模板请去掉或者更换 id 
-baidu:
-    id: 8ba1c6be0953b6f9c2ba38e57f615421  
+# baidu:
+#     id: 8ba1c6be0953b6f9c2ba38e57f615421  
 
 # Google Analytics
 # 使用博客模板请去掉或者更换 id
-ga:
-    id: UA-84134159-3  
-    host: auto  
+# ga:
+#     id: UA-84134159-3  
+#     host: auto  
 
 
 # 《----------------- 上面的信息修改成你自己的 ---------------------------》
@@ -57,11 +57,11 @@ highlighter: rouge
 textColor: #FF0000
 
 # supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
-cover_color: clear
+cover_color: orange
 
 # The blog button should not be removed.
 blog_button:
-    title: 博客主页
+    title: 吴龙涛的主页
 
 # Navigation buttons in the front page.s
 nav:
