@@ -1,7 +1,9 @@
+---
 layout: post
-title: Sysprep使用
+title: 硬盘IO性能估算
 date: 2020-10-20 
-tags: sysprep  
+tags: 硬盘IO性能估算
+---
 
 # 硬盘IO性能估算(IOPS,吞吐量，延时)
 
