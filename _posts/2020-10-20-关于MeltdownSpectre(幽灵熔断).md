@@ -1,7 +1,6 @@
 layout: post
-title: Sysprep使用
 date: 2020-10-20 
-tags: sysprep  
+tags: 漏洞 
 
 ## 概要
 
