@@ -68,7 +68,7 @@ nav:
     - {title: 所有文章, description: archive, url: '/archive'}   
     - {title: 标签, description: tags, url: '/tags'}      
     - {title: 整点私货, description: support, url: '/support'}      
-    - {title: 有趣的, description: 404, url: '/404'}   
+    - {title: 有趣的, description: game, url: '/fun'}   
     
 
 # Pagination
