@@ -2,7 +2,7 @@
 
 /* Tomorrow Comment */
 .hljs-comment {
-  color: #8e908c;
+  color: #eed7c9;
 }
 
 /* Tomorrow Red */
@@ -18,7 +18,7 @@
 .css .hljs-id,
 .css .hljs-class,
 .css .hljs-pseudo {
-  color: #c82829;
+  color: #f1126f;
 }
 
 /* Tomorrow Orange */
@@ -29,7 +29,7 @@
 .hljs-literal,
 .hljs-params,
 .hljs-constant {
-  color: #f5871f;
+  color: #29bed8;
 }
 
 /* Tomorrow Yellow */
