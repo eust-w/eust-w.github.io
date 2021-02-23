@@ -10,8 +10,8 @@ layout: default
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
     <div class="post-meta">
-      <img src="/images/calendar.png" width="20px"/> 
-      <time datetime="{{page.date | date: date_to_xmlschema}}" itemprop="datePublished" class="post-meta__date date">{{page.date | date: "%F"}}</time>  
+      <img src="/images/calendar.png" width="20px"/>
+      <time datetime="{{page.date | date: date_to_xmlschema}}" itemprop="datePublished" class="post-meta__date date">{{page.date | date: "%F"}}</time>
 
       <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
     </p>
@@ -31,3 +31,16 @@ layout: default
 
 {% include new-old.html %}
 {% include comments.html %}
+
+<style type="text/css">
+    canvas#live2dcanvas {
+        border: 0 !important;
+        right: 0;
+    }
+</style>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.0.4/lib/L2Dwidget.min.js"></script>
+
+<script>
+    L2Dwidget.init();
+</script>
