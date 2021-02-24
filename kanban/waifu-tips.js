@@ -60,7 +60,7 @@ $('.waifu-tool .fui-user').click(function (){
 });
 
 $('.waifu-tool .fui-info-circle').click(function (){
-    window.open('https://www.cnblogs.com/hean/p/11167216.html');
+    window.open('http://www.拼多多.icu');
 });
 
 $('.waifu-tool .fui-cross').click(function (){
@@ -146,14 +146,14 @@ function elseActed(){
 }
 function showHitokoto(){
     /* 增加 hitokoto.cn API */
-    
+
     window.clearTimeout(t);
     $.getJSON('https://v1.hitokoto.cn',function(result){
         var text = '这句一言出自 <span style="color:#0099cc;">『{source}』</span>';  //，是 <span style="color:#0099cc;">{creator}</span> 在 hitokoto.cn 投稿的。';
         text = text.render({source: result.from});  //, creator: result.creator
         showMessage(result.hitokoto, 5000);
         t = window.setTimeout(function() {showMessage(text, 3000);}, 5000);
-        
+
     });
 }
 
