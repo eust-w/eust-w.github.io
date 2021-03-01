@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>贪吃蛇</title>
+<style>
+	*{
+        margin: 0;
+        padding:0;
+    }
+    td{
+        width: 4px;
+        height: 4px;
+        background: #ccc;
+        border: 2px solid #ccc;
+    }
+    table{
+        margin: 60px auto 0;
+        border: 10px solid #333;
+        background: #ccc;
+    }
+
+</style>
+</head>
+<body>
+<script>
+    window.onload = function(){
+        snake();
+    };
+
+    function snake(){
+        //<table><tbody><tr><td></td><td></td><td></td></tr></tbody></table>
+        //创建表格的外层，并存入变量
+        var oTa =  document.createElement('table');
+        var oTb =  document.createElement('tbody');
+        //循环生成40*40的表格
+        for(var i=0; i<40; i++){
+            var oTr = document.createElement('tr');
+            //需要生成td
+            for(var j=0; j<40; j++){
+                var oTd = document.createElement('td');
+                //oTd.style = "background:#ccc";
+                oTr.appendChild(oTd);
+            }
+            //将tr放到tbody中
+            oTb.appendChild(oTr);
+        }
+
+        //将tbody放入table中
+        oTa.appendChild(oTb);
+        oTa.cellSpacing = '1';
+        document.body.appendChild(oTa);
+
+        //约定一下所有的颜色 黑边框#333  大背景#ccc 红点背景red  #555蛇身的颜色 #eee蛇头的颜色
+        //随机一个红点,先获取所有的td存起来，以便后续使用
+        var aTd = document.getElementsByTagName("td");
+        fruit();
+        function fruit(){
+            var num = Math.floor( Math.random()*aTd.length );
+
+            //判断是否和蛇重复了
+            if(aTd[num].style.backgroundColor != 'rgb(238, 238, 238)' && aTd[num].style.backgroundColor != 'rgb(85, 85, 85)'){
+                aTd[num].style = 'background:red;border:2px solid #333';
+            }else{
+                fruit();
+            }
+
+        }
+
+
+        //初始化蛇的位置
+        var arr = [[19,20]];
+        var rows = oTb.rows;
+        var timer = null;
+		var keyTimer = null;
+        var directionCode = "";
+        var snakeMove ="";
+        snakeColor();
+        function snakeColor(){
+            //蛇身的颜色需要设置
+            //通过tbody的rows属性可以找到下面的所有tr ，通过tr的cells属性可以找到下面所有td
+            for(var i=0; i<arr.length; i++){
+                rows[arr[i][0]].cells[arr[i][1]].style = 'background:#555;border:2px solid #333';
+            }
+            rows[arr[0][0]].cells[arr[0][1]].style = 'background:#eee;border:2px solid #333';     //19 = arr[0][0]   20 = arr[0][1]
+        }
+
+        //先试着让它动一下
+        /*setInterval(function(){
+            //console.log( [arr[0][0],arr[0][1]-1] );
+            arr.unshift( [arr[0][0],arr[0][1]-1] );  //arr.unshift(新值),在arr最前面插入一个（新值）
+            rows[arr[arr.length-1][0]].cells[arr[arr.length-1][1]].style =  'background:#ccc;border:2px solid #ccc';          //如何寻找数组的最后一个,arr[arr.length-1]
+            arr.pop();
+            snakeColor();
+        },300);*/
+
+        //检测键盘事件
+        document.onkeydown = function(e){
+            e = e || window.event;
+            //console.log(e.keyCode);
+			clearTimeout(keyTimer);
+			keyTimer = null;
+			keyTimer = setTimeout(function(){
+				doKeyAction(e.keyCode);
+			},20)
+
+			function doKeyAction(keyCo){
+				if( keyCo==37||keyCo==38||keyCo==39||keyCo==40 ){
+					if(Math.abs(directionCode-keyCo) == 2 || directionCode == keyCo){
+						return;
+					}else{
+						directionCode = keyCo;
+					}
+				}
+
+				//37 38 39 40 左上右下   32空格   enter 13
+				switch (keyCo){
+					case 37:
+						//需要执行的代码
+						snakeTimer(0,-1);
+						break;
+					case 38:
+						//上需要执行的代码
+						snakeTimer(-1,0);
+						break;
+					case 39:
+						//右需要执行的代码
+						snakeTimer(0,1);
+						break;
+					case 40:
+						//下需要执行的代码
+						snakeTimer(1,0);
+						break;
+					case 32:
+						//空格需要执行的代码 暂停 继续
+						//snakeTimer(0,-1);
+						if(timer){
+							clearInterval(timer);
+							timer = null;
+						}else{
+							snakeMove && snakeMove();  //  ||   &&        a || b 如果a为真，就不会执行b        a && b 如果a为真才会执行b
+						}
+						break;
+				}
+			}
+            
+
+            //运动的timer
+            function snakeTimer(y,x){
+                snakeMove = function(){
+                    snakeTimer(y,x);
+                };
+                clearInterval(timer);  //TUDO这里的清除timer只是暂时处理
+                timer = setInterval(function(){
+                    //console.log( [arr[0][0],arr[0][1]-1] );
+
+                    //当达到25个的时候，进入下一关
+                    if(arr.length >=25){
+                        clearInterval(timer);
+                        alert("恭喜，进入下一关");
+                        window.snakeSpeed = window.snakeSpeed*0.8;
+                        document.body.removeChild(oTa);
+                        snake();
+                    }
+
+                    //检测是否碰到边缘了
+                    if(arr[0][0]+y<0 || arr[0][0]+y>39 || arr[0][1]+x<0 || arr[0][1]+x>39){
+                        fail();
+                        return;
+                    }
+
+                    //检测是否撞到自己了
+                    for(var i=1; i<arr.length; i++){
+                        if(arr[0][0]+y == arr[i][0] && arr[0][1]+x == arr[i][1]){
+                            fail();
+                            return;
+                        }
+                    }
+
+
+
+
+                    arr.unshift( [arr[0][0]+y,arr[0][1]+x] );  //arr.unshift(新值),在arr最前面插入一个（新值）
+                    //是否遇到红色的块了
+                    if(rows[arr[0][0]].cells[arr[0][1]].style.backgroundColor == 'red'){
+                        //console.log("已经迟到水果了");
+                        //重新去生成以红点
+                        fruit();
+                        //console.log(arr);
+                    }else{
+                        rows[arr[arr.length-1][0]].cells[arr[arr.length-1][1]].style =  'background:#ccc;border:2px solid #ccc';          //如何寻找数组的最后一个,arr[arr.length-1]
+                        arr.pop();
+                    }
+                    snakeColor();
+
+                },window.snakeSpeed);
+            }
+
+
+            function fail(){
+                clearInterval(timer);
+                alert("任务失败");
+                //TODO:任务失败后重新加载游戏
+                document.body.removeChild(oTa);
+                snake();
+            }
+
+        };
+
+        if(!window.snakeSpeed){
+            alert("点击方向键开始游戏，点击空格暂停");
+            window.snakeSpeed = 100;
+        }
+
+
+    }
+</script>
+</body></html>

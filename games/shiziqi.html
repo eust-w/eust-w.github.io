@@ -1,0 +1,193 @@
+<!-- TicTacToe -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .cell {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            border: solid 1px #000;
+            vertical-align: middle;
+            line-height: 100px;
+            text-align: center;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+<script>
+    const pattern = [
+        0, 0, 0,
+        0, 0, 0,
+        0, 0, 0
+    ]
+
+    // 棋子 1：❌，2：⭕️，默认1先手
+    let flag = 1;
+
+    show();
+
+    //  渲染函数
+    function show() {
+        const box = document.getElementById('box');
+
+        box.innerHTML = ''
+
+        for(let i = 0; i < 3; i++) {
+            for(let j = 0; j < 3; j++) {
+                const cell = document.createElement('div');
+                cell.classList.add('cell');
+                cell.innerText =
+                    pattern[i * 3 + j] === 2 ? '❌' :
+                        pattern[i * 3 + j] === 1 ? '⭕️' : '';
+
+                //  添加点击事件
+                cell.addEventListener('click', () => useMove(i, j));
+                box.appendChild(cell);
+            }
+            box.appendChild(document.createElement('br'));
+        }
+    }
+
+    function useMove(x, y) {
+        if(pattern[x * 3 + y] === 0) {
+            pattern[x * 3 + y] = flag;
+            if(check(pattern, flag)) {
+                alert(flag === 2 ? '❌获得胜利' : '⭕️获得胜利');
+            }
+            show();
+            flag = 3 - flag;
+            computeMove();
+        }
+    }
+
+    function computeMove() {
+        let choice = bestChoice(pattern, flag);
+        if(choice.point) {
+            pattern[choice.point[1] * 3 + choice.point[0]] = flag;
+        }
+        if(check(pattern, flag)) {
+            alert(flag === 2 ? '❌获得胜利' : '⭕️获得胜利');
+        }
+        flag = 3 - flag;
+        show();
+    }
+
+    //  胜负校验函数
+    function check(pattern, flag) {
+        //  横
+        for(let i = 0; i < 3; i++) {
+            let win = true;
+            for(let j = 0; j < 3; j++) {
+                if(pattern[i * 3 + j] !== flag) {
+                    win = false;
+                }
+            }
+            if(win) return true;
+        }
+
+        //  竖
+        for(let  i = 0; i < 3; i++) {
+            let win = true;
+            for(let j = 0; j < 3; j++) {
+                if(pattern[j * 3 + i] !== flag) {
+                    win = false;
+                }
+            }
+            if(win) return true;
+        }
+
+        //  左上到右下的对角线，横纵坐标相等时的值对比flag
+        {
+            let win = true;
+            for(let j = 0; j < 3; j++) {
+                if(pattern[j * 3 + j] !== flag) {
+                    win = false;
+                }
+            }
+            if(win) return true;
+        }
+
+        //  从右上到左下的对角线，纵坐标等于横纵标的2-X
+        {
+            let win = true;
+            for(let j = 0; j < 3; j++) {
+                if(pattern[j * 3 + 2 - j] !== flag) {
+                    win = false;
+                }
+            }
+            if(win) return true;
+        }
+        return false;
+    }
+
+    //  设计AI
+    //  预测下一步的最好情况
+    function bestChoice(pattern, flag) {
+        let point = willWin(pattern, flag);
+        if(point) {
+            return {
+                point: point,
+                result: 1
+            }
+        }
+
+        let result = -1;
+
+        //  递归预测下一步
+        outer:for(let i = 0; i < 3; i++) {
+            for(let j = 0; j < 3; j++) {
+                if(pattern[i * 3 + j] !== 0) {
+                    continue;
+                }
+                let tmp = clone(pattern);
+                tmp[i * 3 + j] = flag;
+                let opp = bestChoice(tmp, 3 - flag);
+
+                if(-opp.result >= result) {
+                    result = -opp.result;
+                    point = [j, i];
+                }
+
+                //  剪枝
+                if(result === 1) {
+                    break outer;
+                }
+            }
+        }
+
+        return {
+            point: point,
+            result: point ? result : 0
+        }
+    }
+
+    function willWin(pattern, flag) {
+        //  模拟下一步，查看下一步结果是否获胜
+        for(let i = 0; i < 3; i++) {
+            for(let j = 0; j < 3; j++) {
+                if(pattern[i * 3 + j] !== 0) {
+                    continue;
+                }
+                let tmp = clone(pattern);
+                tmp[i * 3 + j] = flag;
+                if(check(tmp, flag)) {
+                    return [j, i];
+                }
+            }
+        }
+        return null;
+    }
+
+    function clone(pattern) {
+        return Object.create(pattern);
+    }
+</script>
+</html>
