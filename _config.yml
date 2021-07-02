@@ -69,6 +69,7 @@ nav:
     - {title: 标签, description: tags, url: '/tags'}
     - {title: 整点私货, description: support, url: '/support'}
     - {title: 小游戏, description: game, url: '/fun.html'}
+    - {title: 知识, description: learn, url: '/learn.html'}
 
 
 # Pagination

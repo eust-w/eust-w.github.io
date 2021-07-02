@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<!-- saved from url=(0092)https://docs.google.com/spreadsheets/d/1zfw8nPvJeewxcFUBpKUKmAVE8PjnJI7H0CKimdQXxr0/htmlview -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="google" content="notranslate"><meta name="viewport" content="target-densitydpi=device-dpi,user-scalable=1,minimum-scale=1,maximum-scale=2.5,initial-scale=1,width=device-width"><meta http-equiv="X-UA-Compatible" content="IE=edge;"><meta name="referrer" content="strict-origin-when-cross-origin"><title>Stanford CS Curriculum - Google 云端硬盘</title><link rel="shortcut icon" href="https://ssl.gstatic.com/docs/spreadsheets/favicon3.ico"><link href="./Stanford CS Curriculum - Google 云端硬盘_files/3738551658-waffle_k_ltr.css" type="text/css" rel="stylesheet" nonce=""><style type="text/css" nonce="">
+    html { overflow: visible; }
+    #sheets-viewport { overflow: auto; }
+    #sheets-viewport.widget-viewport { overflow: hidden; }
+    .grid-container { overflow: visible; background: white;}
+    .grid-table-container { overflow: visible; }
+    #top-bar {
+        margin: 0;
+        overflow: hidden;
+    }
+    #top-bar {
+        border-bottom: 1px solid #ccc;
+        padding: 6px 6px 0;
+    }
+    #doc-title { padding-bottom: 5px; }
+    #doc-title .name { font-size: 15px; }
+    #sheet-menu {
+        font-size: 13px;
+        margin: 6px 0 0;
+        padding: 0 0 5px;
+    }
+    #sheet-menu li {
+        display: inline;
+        list-style-type: none;
+        margin: 0;
+        padding: 5px 8px;
+    }
+    #sheet-menu li.active {
+        background-color: #fff;
+        font-weight: bold;
+        border: 1px solid #999;
+    }
+    #top-bar #sheet-menu li.active {
+        border-bottom: 0;
+    }
+    #sheet-menu a, #sheet-menu a:visited { color: #07c; }
+    #footer {
+        background: #f0f0f0;
+        border-top: 1px #ccc solid;
+        border-bottom: 1px #ccc solid;
+        font-size: 13;
+        padding: 10px 10px;
+    }
+    .dash {
+        padding: 0 6px;
+    }
+    .ritz .waffle a { color: inherit; }.ritz .waffle .s5{border-left: none;background-color:#ffffff;}.ritz .waffle .s0{background-color:#efefef;text-align:left;font-weight:bold;color:#000000;font-family:'Arial';font-size:10pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:2px 3px 2px 3px;}.ritz .waffle .s1{background-color:#ffffff;text-align:left;font-weight:bold;color:#000000;font-family:'Arial';font-size:10pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:2px 3px 2px 3px;}.ritz .waffle .s4{border-right: none;background-color:#ffffff;text-align:left;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;color:#1155cc;font-family:'Arial';font-size:10pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:2px 3px 2px 3px;}.ritz .waffle .s3{background-color:#ffffff;text-align:left;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;color:#1155cc;font-family:'Arial';font-size:10pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:2px 3px 2px 3px;}.ritz .waffle .s6{border-left: none;background-color:#ffffff;text-align:left;color:#000000;font-family:'Arial';font-size:10pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:2px 3px 2px 3px;}.ritz .waffle .s2{background-color:#ffffff;text-align:left;color:#000000;font-family:'Arial';font-size:10pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:2px 3px 2px 3px;}</style><script type="text/javascript" nonce="">
+    var activeSheetId;
+
+    function switchToSheet(id) {
+        if (document.getElementById('sheet-menu')) {
+            document.getElementById('sheet-button-' + activeSheetId)
+                .className = '';
+            document.getElementById('sheet-button-' + id).className = 'active';
+        }
+
+        document.getElementById(activeSheetId).style.display = 'none';
+        document.getElementById(id).style.display = '';
+        activeSheetId = id;
+
+        // posObjs() is defined in embeddedObjectJs (see EmbeddedObjectHtmlBuilder.java)
+        posObjs();
+        return false;
+    }
+
+    function init() {
+        var optPageSwitcher;
+
+        function resize() {
+            var optMobileWebHeader = document.getElementById('docs-ml-header-id');
+            var optTopBar = document.getElementById('top-bar');
+            var optFooter = document.getElementById('footer');
+            var sheetsViewport = document.getElementById('sheets-viewport');
+
+            if (optMobileWebHeader) {
+                sheetsViewport.style.marginTop = optMobileWebHeader.offsetHeight +
+                    (optTopBar ? optTopBar.offsetHeight : 0) + 'px';
+            }
+            var adjustedHeight = window.innerHeight -
+                (optTopBar ? optTopBar.offsetHeight : 0) -
+                (optFooter ? optFooter.offsetHeight : 0);
+            var adjustedWidth = window.innerWidth;
+            sheetsViewport.style.width = (adjustedWidth + 'px');
+            sheetsViewport.style.height = (adjustedHeight + 'px');
+            if (optPageSwitcher) {
+                optPageSwitcher.resize(adjustedWidth, adjustedHeight);
+            }
+        }
+        resize();
+        window.onresize = resize;
+        var currentUrl = window.location.href;
+        var newUrl = currentUrl.replace('?sle=true&', '?');
+        newUrl = newUrl.replace('?sle=true', '');
+        newUrl = newUrl.replace('&sle=true&', '&');
+        newUrl = newUrl.replace('&sle=true', '');
+        window.history.replaceState(null, '', newUrl);
+    }
+</script><script nonce="">_docs_flag_initialData={"docs-mwid":true,"docs-smheo":false,"info_params":{"token":"AC4w5VjDK05rSR5p2DJvIiDVrP6pwNn5Yw:1625202622433","includes_info_params":true},"ilcm":{"eui":"ADFN-cvABFFJzaO-TQ-RxRLmN8kim_4Ouor_beaS2TbC_1U4BRBc6nS743W7iLh9w9wixZj6Fh1a","je":1,"sstu":1625202622438000,"si":"COi5_sfPw_ECFRbPSgodPE0OgQ","gsc":2,"ei":[5706601,5727063,5724085,5711850,5711524,5739056,5712352,5702936,5712909,5715637,5719418,5724533,5730867,5712033,5700333,5726190,5712913,5709476,5711826,5708862,5708886,5707445,5711550,5735134,5723679,5712477,5713597,5719212,5700019,5705893,5723365,5731094,5703028,5713605,5739152,5705299,5712469,5725300,5722370,5724916,5700579,5735509,5728515,5708578,5714322,5739551,5707819,5728103,5722189,5706661,5707197,5721344,5714326,5725052,5710542,5717070,5708870,5733973,5719502,5719531,5703815,5702912,5719462,5720479,5731412,5703186,5713049,5704063,5711708,5714674,5707711,5715399,5735281,5719651,5719170,5736145,5711230,5720483,5727853,5702785,5715515,5720788,5739036,5722346,5706133,5726110,5701034,5713681,5721307,5706069,5736924,5711685,5737153,5733204,5712635,5714628,5713227,5704883,5721004,5711012,5713542,5712929,5707609,5738168,5710637,5729206,5731014,5704621,5701650,5730285,5709085,5713207,13702623,5710893,5707657,5726438,5724436,5737357,5713333,5703182,5728335,5701594,5711155,5714843,5706751,5715246,5709709,5711808,5700057,5735630,5715824,5725240,5735806,5709892,5707047,5716457,5724896,5715641,5734352,5712525,5721012,5736244,5733710,5739837,5731174,5709447,5740247,5730290,5708479,5702445,5710746,5709357,5715364,5713223,5710677,5705493,5713657,5712905,5707204,5713195,5727624,5719482,5728945,5707856,5725511,5711099,5720714,5716028,5714445,5741578,5703837,5729546,5727257,5714330,5703762,5729072,5726595,5716149,5707137,5713152,5717161,5738433,5700446,5716145,5707406,5704144,5720516,5706007,5727042,5705777,5703591,5728567,5737897,5728475,5708974,5712473,5704581,5711889,5716416,5700422,5717118,5712211,5706169,5722409,5727901,5721814,5705040,5720060,5723284,5713554,5737700,5706523,5725742,5713211,5712298,5704641,5719535,5711765,5720487,5714796,5703259,5706270,5707986,5711297,5710692,5714310,5737254,5720925,5714967,5702849,5734994,5729092,5700893,5714839,5732962,5706786,5720595,5707425,5713191,5700559,5721764,5710645,5703839,5711471,5705223,5714961,5733570,5725338,5740048,5706933,5712373,5711769,5728807,5734571,5731783,5737401,5723871,5703913,5710938,5717949,5722567,5705581,5720568,5709661,5707939,5703022,5710933,5705649,5707385,5735670,5700103,5709381,5714550,5711957,5701903,5702135,5731530,5700884,5719527],"crc":1,"cvi":[3300019,3300117,3300131,3313321,3325361,3330082,3340589,3340637,3341336,3341364,3341470]},"drive_url":"//drive.google.com/u/0?usp\u003dsheets_web","docs-ehr":true,"docs-sup":"/spreadsheets/u/0"}; _docs_flag_cek='NMSB1t79Kgg8IPmyM_Z0iA\x3d\x3d'; if (window['DOCS_timing']) {DOCS_timing['ifdld']=new Date().getTime();}</script><script nonce="">document.addEventListener('DOMContentLoaded', init);</script><style type="text/css">[contenteditable="true"]:active, [contenteditable="true"]:focus {
+    /*border-color: #00B977;*/
+    outline: #00B977 solid thin;
+    /*color: #00B977;*/
+    background-color: rgba(0, 185, 119, 0.05);
+}
+
+.cyxy-trs-target.colored {
+    background-color: rgba(0, 185, 119, 0.05);
+}
+
+.cyxy-target-popup {
+    padding: 1.3rem 12px;
+    position: absolute;
+    display: -webkit-flex;
+    display: inline-flex;
+    flex-direction: row;
+    overflow: scroll;
+    vertical-align: middle;
+    z-index: 199099;
+    top: 1px;
+    left: 1px;
+    background: #fff;
+    opacity: 0.98;
+    /*margin: 0px 5%;*/
+    height: auto;
+    width: auto;
+    border: 1px solid #E6E6E6;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.13);
+    border-radius: 5px;
+    /*height: 7rem;*/
+}
+
+@media (max-width: 468px) {
+    .cyxy-target-popup {
+        /*width: 90%;*/
+        /*margin: 0px 5%;*/
+        left: 10%;
+        /*right: 5%;*/
+        /*width: 30rem;*/
+        /*height: 14.58rem;*/
+    }
+}
+
+#cyxy-popup-left-slide {
+    height: 22px;
+    display: inline;
+    vertical-align: middle;
+    margin-right: 14px;
+    cursor: pointer;
+}
+
+#cyxy-popup-right-slide {
+    height: 22px;
+    display: inline;
+    vertical-align: middle;
+    margin-left: 0px;
+    cursor: pointer;
+}
+
+#cyxy-popup-userinfo {
+    display: inline;
+}
+
+.cyxy-target-count {
+    display: inline;
+    vertical-align: middle;
+    font-size: 10px;
+}
+
+#cyxy-popup-avatar {
+    /*margin-right: 30px;*/
+    /*font-size: 14px;*/
+    display: inline;
+    height: 32px;
+    vertical-align: middle;
+    border-radius: 16px;
+}
+
+#cyxy-popup-name-time {
+    display: -webkit-flex;
+    display: inline-flex;
+    flex-direction: column;
+    /*align-items: center;*/
+    /*position: relative;*/
+    vertical-align: middle;
+    text-align: left;
+    margin-left: 6px;
+}
+
+#cyxy-popup-name {
+    /*vertical-align: middle;*/
+    /*display: flex;*/
+    font-size: 14px;
+    color: #333;
+    height: 18px;
+    overflow: hidden;
+    max-width: 84px;
+}
+
+#cyxy-popup-time {
+    /*margin-right: 30px;*/
+    /*font-size: 14px;*/
+    /*display: flex;*/
+    font-size: 12px;
+    margin-top: 4px;
+    color: #999
+}
+
+.cyxy-footer {
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    padding: 0px 0px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0.90;
+    border: 1px solid #E6E6E6;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.13);
+    border-radius: 2px;
+    z-index: 201712;
+    text-align: center;
+}
+
+.cyxy-footer-p {
+    padding: 12px 0px;
+    margin: 0px;
+    font-size: 12px;
+    color: #333;
+    background: #fff;
+    text-align: center;
+    line-height: 1.6;
+    font-weight: 200;
+}
+
+#cyxy-popup-favour {
+    text-align: center;
+    display: inline;
+    margin-right: 20px;
+    margin-left: 46px;
+    cursor: pointer;
+}
+
+#cyxy-popup-favour.commit {
+    /*padding: 2px 6px;*/
+    /*border: 1px solid #00B977;*/
+    /*border-radius: 4px;*/
+}
+
+#cyxy-popup-oppose {
+    text-align: center;
+    display: inline;
+    cursor: pointer;
+}
+
+#cyxy-popup-favour-img {
+    display: inline;
+    height: 20px;
+    /*width: 22px;*/
+    vertical-align: middle;
+}
+
+#cyxy-popup-favour-img.commit {
+    /*height: 22px;*/
+    /*vertical-align: middle;*/
+}
+
+#cyxy-popup-oppose-img {
+    display: inline;
+    height: 18px;
+    vertical-align: middle;
+}
+
+#cyxy-popup-favour-num {
+    font-size: 14px;
+    margin-left: 4px;
+    /*margin-left: 0.47rem;*/
+    color: #999999;
+}
+
+#cyxy-popup-oppose-num {
+    font-size: 14px;
+    margin-left: 4px;
+    /*margin-left: 0.47rem;*/
+    color: #999;
+}
+
+.caption-window.ytp-caption-window-bottom {
+    width: 800px;
+    /* height: 100px; */
+    /* margin-left: -400px; */
+}
+
+@media (max-width: 320px) {
+    #cyxy-popup-favour {
+        margin-right: 0.8rem;
+        margin-left: 1.5rem;
+    }
+
+    #cyxy-popup-left-slide {
+        margin-right: 0.8rem;
+    }
+
+    #cyxy-popup-right-slide {
+        margin-left: 1rem;
+    }
+
+}
+
+.login-hint-a {
+    display: block;
+    color: #999;
+    font-size: 10px;
+}
+
+.login-hint-a:visited {
+    color: #999;
+}
+
+.layui-m-layer {
+    position: relative;
+    z-index: 19891014
+}
+
+.layui-m-layer * {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box
+}
+
+.layui-m-layermain, .layui-m-layershade {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+.layui-m-layershade {
+    background-color: rgba(0, 0, 0, .7);
+    pointer-events: auto
+}
+
+.layui-m-layermain {
+    display: table;
+    font-family: Helvetica, arial, sans-serif;
+    pointer-events: none
+}
+
+.layui-m-layermain .layui-m-layersection {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center
+}
+
+.layui-m-layerchild {
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    background-color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+    pointer-events: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s
+}
+
+@-webkit-keyframes layui-m-anim-scale {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(.5);
+        transform: scale(.5)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+}
+
+@keyframes layui-m-anim-scale {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(.5);
+        transform: scale(.5)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+}
+
+.layui-m-anim-scale {
+    animation-name: layui-m-anim-scale;
+    -webkit-animation-name: layui-m-anim-scale
+}
+
+@-webkit-keyframes layui-m-anim-up {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(800px);
+        transform: translateY(800px)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@keyframes layui-m-anim-up {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(800px);
+        transform: translateY(800px)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+.layui-m-anim-up {
+    -webkit-animation-name: layui-m-anim-up;
+    animation-name: layui-m-anim-up
+}
+
+.layui-m-layer0 .layui-m-layerchild {
+    width: 90%;
+    max-width: 640px
+}
+
+.layui-m-layer1 .layui-m-layerchild {
+    border: none;
+    border-radius: 0
+}
+
+.layui-m-layer2 .layui-m-layerchild {
+    width: auto;
+    max-width: 260px;
+    min-width: 40px;
+    border: none;
+    background: 0 0;
+    box-shadow: none;
+    color: #fff
+}
+
+.layui-m-layerchild h3 {
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 5px 5px 0 0;
+    text-align: center
+}
+
+.layui-m-layerbtn span, .layui-m-layerchild h3 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+.layui-m-layercont {
+    padding: 50px 30px;
+    line-height: 22px;
+    text-align: center
+}
+
+.layui-m-layer1 .layui-m-layercont {
+    padding: 0;
+    text-align: left
+}
+
+.layui-m-layer2 .layui-m-layercont {
+    text-align: center;
+    padding: 0;
+    line-height: 0
+}
+
+.layui-m-layer2 .layui-m-layercont i {
+    width: 25px;
+    height: 25px;
+    margin-left: 8px;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 100%;
+    -webkit-animation: layui-m-anim-loading 1.4s infinite ease-in-out;
+    animation: layui-m-anim-loading 1.4s infinite ease-in-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+
+.layui-m-layerbtn, .layui-m-layerbtn span {
+    position: relative;
+    text-align: center;
+    border-radius: 0 0 5px 5px
+}
+
+.layui-m-layer2 .layui-m-layercont p {
+    margin-top: 20px
+}
+
+@-webkit-keyframes layui-m-anim-loading {
+    0%, 100%, 80% {
+        transform: scale(0);
+        -webkit-transform: scale(0)
+    }
+    40% {
+        transform: scale(1);
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes layui-m-anim-loading {
+    0%, 100%, 80% {
+        transform: scale(0);
+        -webkit-transform: scale(0)
+    }
+    40% {
+        transform: scale(1);
+        -webkit-transform: scale(1)
+    }
+}
+
+.layui-m-layer2 .layui-m-layercont i:first-child {
+    margin-left: 0;
+    -webkit-animation-delay: -.32s;
+    animation-delay: -.32s
+}
+
+.layui-m-layer2 .layui-m-layercont i.layui-m-layerload {
+    -webkit-animation-delay: -.16s;
+    animation-delay: -.16s
+}
+
+.layui-m-layer2 .layui-m-layercont > div {
+    line-height: 22px;
+    padding-top: 7px;
+    margin-bottom: 20px;
+    font-size: 14px
+}
+
+.layui-m-layerbtn {
+    display: box;
+    display: -moz-box;
+    display: -webkit-box;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 0;
+    border-top: 1px solid #D0D0D0;
+    background-color: #F2F2F2
+}
+
+.layui-m-layerbtn span {
+    display: block;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    -webkit-box-flex: 1;
+    font-size: 14px;
+    cursor: pointer
+}
+
+.layui-m-layerbtn span[yes] {
+    color: #40AFFE
+}
+
+.layui-m-layerbtn span[no] {
+    border-right: 1px solid #D0D0D0;
+    border-radius: 0 0 0 5px
+}
+
+.layui-m-layerbtn span:active {
+    background-color: #F6F6F6
+}
+
+.layui-m-layerend {
+    position: absolute;
+    right: 7px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    font-weight: 400;
+    background: 0 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+    font-size: 30px
+}
+
+.layui-m-layerend::after, .layui-m-layerend::before {
+    position: absolute;
+    left: 5px;
+    top: 15px;
+    content: '';
+    width: 18px;
+    height: 1px;
+    background-color: #999;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    border-radius: 3px
+}
+
+.layui-m-layerend::after {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg)
+}
+
+body .layui-m-layer .layui-m-layer-footer {
+    position: fixed;
+    width: 95%;
+    max-width: 100%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    background: 0 0
+}
+
+.layui-m-layer-footer .layui-m-layercont {
+    padding: 20px;
+    border-radius: 5px 5px 0 0;
+    background-color: rgba(255, 255, 255, .8)
+}
+
+.layui-m-layer-footer .layui-m-layerbtn {
+    display: block;
+    height: auto;
+    background: 0 0;
+    border-top: none
+}
+
+.layui-m-layer-footer .layui-m-layerbtn span {
+    background-color: rgba(255, 255, 255, .8)
+}
+
+.layui-m-layer-footer .layui-m-layerbtn span[no] {
+    color: #FD482C;
+    border-top: 1px solid #c2c2c2;
+    border-radius: 0 0 5px 5px
+}
+
+.layui-m-layer-footer .layui-m-layerbtn span[yes] {
+    margin-top: 10px;
+    border-radius: 5px
+}
+
+body .layui-m-layer .layui-m-layer-msg {
+    width: auto;
+    max-width: 90%;
+    margin: 0 auto;
+    bottom: -150px;
+    background-color: rgba(0, 0, 0, .7);
+    color: #fff
+}
+
+.layui-m-layer-msg .layui-m-layercont {
+    padding: 10px 20px
+}
+
+.cyxy-official {
+    position: fixed;
+    height: 50px;
+    bottom: 30px !important;
+    right: 20px;
+    z-index: 199999;
+    cursor: pointer;
+}
+.cyxy-function {
+    position: fixed;
+    height: 50px;
+    bottom: 80px !important;
+    right: 20px;
+    z-index: 199999;
+    cursor: pointer;
+}
+.cyxy-personal {
+    position: fixed;
+    height: 50px;
+    bottom: 130px !important;
+    right: 20px;
+    z-index: 199999;
+    cursor: pointer;
+}
+.cyxy-personal  .cyxy-favorite-btn{
+    border: 2px solid #5ebb8d;
+    box-sizing: border-box;
+}
+
+.cyxy-video-hint,
+.cyxy-official-hint,
+.cyxy-function-hint,
+.cyxy-favorite-hint,
+.cyxy-personal-hint,
+.cyxy-options-hint,
+.cyxy-ctrl-hint {
+    background: #fff;
+    box-shadow: 3px 0 4px -1px hsla(0,0%,58%,.5), -4px 0 4px -1px hsla(0,0%,74%,.5);
+    border-radius: 3.5px;
+    position: fixed;
+    height: 32px;
+    line-height: 32px;
+    right: 66px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-family: auto;
+    color: #666;
+    cursor: default;
+    padding-left: 10px;
+    padding-right: 15px;
+    margin-top: -16px;
+    z-index: 2147483647;
+}
+
+.cyxy-video-hint::before,
+.cyxy-function-hint::before,
+.cyxy-official-hint::before,
+.cyxy-favorite-hint::before,
+.cyxy-personal-hint::before,
+.cyxy-options-hint::before,
+.cyxy-ctrl-hint::before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 50%;
+    margin-top: -6px;
+    transform: rotate(-45deg);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    right: -5px;
+    box-shadow: 3px 0 4px -1px hsla(0,0%,58%,.5);
+}
+
+
+.cyxy-personal-hint {
+    bottom: 132px;
+}
+
+.cyxy-function-hint {
+    bottom: 82px;
+}
+
+.cyxy-official-hint {
+    bottom: 32px;
+}
+
+/*switch button*/
+.cyxy-switch {
+    position: relative;
+    display: inline-block;
+    width: 54px;
+    height: 28px;
+}
+
+.cyxy-switch input {display:none;}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #00B976;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #00B976;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.cyxy-favorite {
+    /*background: ;*/
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    z-index: 109999;
+    cursor: pointer;
+}
+
+.cyxy-favorite-btn {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+.collection-success{
+    /*opacity: 0.6;*/
+    /*background: #EAEAEA;*/
+    color: #FFFFFF;
+}
+.collection-success:hover{
+    /*opacity: 0.45;*/
+    /*background: #000000;*/
+    color: #FFFFFF;
+}
+.layui-m-layercont .cyxy-trs-target{
+    display: none;
+}
+.collection-icon{
+    width: 12px;
+    height: 13px;
+    background: url('//staging.caiyunapp.com/imgs/layar-target.png') no-repeat;
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+}
+.collection-success >a{
+    margin-left: 12px;
+    vertical-align: middle;
+}
+.cy_free_box{
+    position: relative;
+}
+.cy_free_box img{
+    width:100%;
+    cursor: pointer;
+    -moz-user-select: none; /*火狐*/
+    -webkit-user-select: none;  /*webkit浏览器*/
+    -ms-user-select: none;   /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
+}
+.cy_free_button{
+    /* padding: 0 20%; */
+}
+.cy_free_button img{
+    width: 40%;
+    margin: 0 10px;
+}
+.cy_free_del{
+    position: absolute;
+    width: 6%;
+    height: 6%;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    /* background: #000; */
+    z-index: 10;
+}
+.layui-m-layer-cy_free_content{
+    background: inherit !important;
+}
+@media (max-width: 650px) {
+    .cyxy-function{
+        /* top: inherit !important; */
+        /* right: 20px !important;
+        bottom: 60px !important; */
+    }
+    .cyxy-favorite{
+        /* top: 50px !important; */
+    }
+}</style></head><body class="docs-gm"><div id="top-bar"><div id="doc-title"><span class="name cyxy-trs-source">Stanford CS Curriculum : Stanford<font class="cyxy-trs-target"> 斯坦福 CS 课程: 斯坦福</font></span></div></div><div id="sheets-viewport" style="width: 1217px; height: 492px;"><div id="0" style="position: relative;" dir="ltr"><div class="ritz grid-container" dir="ltr"><table class="waffle" cellspacing="0" cellpadding="0"><thead><tr><th class="row-header freezebar-origin-ltr"></th><th id="0C0" style="width:114px;" class="column-headers-background">A</th><th id="0C1" style="width:114px;" class="column-headers-background">B</th><th id="0C2" style="width:350px;" class="column-headers-background">C</th><th id="0C3" style="width:298px;" class="column-headers-background">D</th><th id="0C4" style="width:224px;" class="column-headers-background">E</th></tr></thead><tbody><tr style="height: 20px"><th id="0R0" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">1</div></th><td class="s0 cyxy-trs-source" dir="ltr">Group<font class="cyxy-trs-target"> 组别</font></td><td class="s0 cyxy-trs-source" dir="ltr">Code<font class="cyxy-trs-target"> 代码</font></td><td class="s0 cyxy-trs-source" dir="ltr">Course<font class="cyxy-trs-target"> 当然</font></td><td class="s0 cyxy-trs-source" dir="ltr">Web<font class="cyxy-trs-target"> 网页</font></td><td class="s1" dir="ltr"></td></tr><tr style="height: 20px"><th id="0R1" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">2</div></th><td class="s2 cyxy-trs-source" dir="ltr">intro<font class="cyxy-trs-target"> 介绍</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs1U</td><td class="s2 cyxy-trs-source" dir="ltr">Practical Unix<font class="cyxy-trs-target"> 实用 Unix</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://practicalunix.org&amp;sa=D&amp;source=editors&amp;ust=1625206222415000&amp;usg=AOvVaw2OFEywYiH-YfI442jnWc7e">https://practicalunix.org</a></td><td></td></tr><tr style="height: 20px"><th id="0R2" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">3</div></th><td class="s2 cyxy-trs-source" dir="ltr">programming<font class="cyxy-trs-target"> 编程</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs41</td><td class="s2 cyxy-trs-source" dir="ltr">The Python Programming Language<font class="cyxy-trs-target"> Python</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://stanfordpython.com/%23/&amp;sa=D&amp;source=editors&amp;ust=1625206222416000&amp;usg=AOvVaw1F-EzfmPbjdcb9_4lvAAsK">https://stanfordpython.com/#/</a></td><td></td></tr><tr style="height: 20px"><th id="0R3" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">4</div></th><td class="s2 cyxy-trs-source" dir="ltr">mobile<font class="cyxy-trs-target"> 移动的</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs47</td><td class="s2 cyxy-trs-source" dir="ltr">Cross-Platform Mobile Development<font class="cyxy-trs-target"> 跨平台移动开发</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://web.stanford.edu/class/cs47/%23schedule&amp;sa=D&amp;source=editors&amp;ust=1625206222416000&amp;usg=AOvVaw2TJ6qR4hxhlC1e5DEdilRp">https://web.stanford.edu/class/cs47/#schedule</a></td><td></td></tr><tr style="height: 20px"><th id="0R4" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">5</div></th><td class="s2 cyxy-trs-source" dir="ltr">programming<font class="cyxy-trs-target"> 编程</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs106A</td><td class="s2 cyxy-trs-source" dir="ltr">Programming Methodology<font class="cyxy-trs-target"> 程序设计方法</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs106a/&amp;sa=D&amp;source=editors&amp;ust=1625206222416000&amp;usg=AOvVaw0xYPFXsM-AFFXbTJcYC7Ys">http://web.stanford.edu/class/cs106a/</a></td><td></td></tr><tr style="height: 20px"><th id="0R5" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">6</div></th><td class="s2 cyxy-trs-source" dir="ltr">programming<font class="cyxy-trs-target"> 编程</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs106B</td><td class="s2 cyxy-trs-source" dir="ltr">Programming Abstractions<font class="cyxy-trs-target"> 编程抽象</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://web.stanford.edu/class/cs106b/&amp;sa=D&amp;source=editors&amp;ust=1625206222416000&amp;usg=AOvVaw03NYxWDb-wz7MT_mHo9OM9">https://web.stanford.edu/class/cs106b/</a></td><td></td></tr><tr style="height: 20px"><th id="0R6" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">7</div></th><td class="s2 cyxy-trs-source" dir="ltr">programming<font class="cyxy-trs-target"> 编程</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs106L</td><td class="s2 cyxy-trs-source" dir="ltr">Standard C++ Programming Laboratory<font class="cyxy-trs-target"> 标准 c + + 编程实验室</font></td><td class="s4 softmerge" dir="ltr"><div class="softmerge-inner" style="width:520px;left:-1px"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs106l/lectures.html&amp;sa=D&amp;source=editors&amp;ust=1625206222416000&amp;usg=AOvVaw2oIy_0TMZCUptT3HkZN0It">http://web.stanford.edu/class/cs106l/lectures.html</a></div></td><td class="s5"></td></tr><tr style="height: 20px"><th id="0R7" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">8</div></th><td class="s2 cyxy-trs-source" dir="ltr">programming<font class="cyxy-trs-target"> 编程</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs106M</td><td class="s2 cyxy-trs-source" dir="ltr">Enrichment Adventures in Programming Abstractions<font class="cyxy-trs-target"> 编程抽象中的丰富冒险</font></td><td class="s4 softmerge" dir="ltr"><div class="softmerge-inner" style="width:520px;left:-1px"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://web.stanford.edu/class/cs106m/syllabus&amp;sa=D&amp;source=editors&amp;ust=1625206222416000&amp;usg=AOvVaw0QF-Ybu04qTToEvJqBsrHM">https://web.stanford.edu/class/cs106m/syllabus</a></div></td><td class="s5"></td></tr><tr style="height: 20px"><th id="0R8" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">9</div></th><td class="s2 cyxy-trs-source" dir="ltr">intro<font class="cyxy-trs-target"> 介绍</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs106E</td><td class="s2 cyxy-trs-source" dir="ltr">Exploring Computing<font class="cyxy-trs-target"> 探索计算</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://web.stanford.edu/class/cs106e/&amp;sa=D&amp;source=editors&amp;ust=1625206222416000&amp;usg=AOvVaw1KsrgKZjVGGhYVE-C-lBFH">https://web.stanford.edu/class/cs106e/</a></td><td></td></tr><tr style="height: 20px"><th id="0R9" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">10</div></th><td class="s2 cyxy-trs-source" dir="ltr">systems<font class="cyxy-trs-target"> 系统</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs107</td><td class="s2 cyxy-trs-source" dir="ltr">Computer Organization and Systems<font class="cyxy-trs-target"> 电脑组织及系统</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs107/&amp;sa=D&amp;source=editors&amp;ust=1625206222416000&amp;usg=AOvVaw1t5KGiFFnSwT6sSfEMJlLa">http://web.stanford.edu/class/cs107/</a></td><td></td></tr><tr style="height: 20px"><th id="0R10" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">11</div></th><td class="s2 cyxy-trs-source" dir="ltr">systems<font class="cyxy-trs-target"> 系统</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs107e</td><td class="s2 cyxy-trs-source" dir="ltr">Computer Systems from the Ground Up<font class="cyxy-trs-target"> 从头开始计算机系统</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs107e/&amp;sa=D&amp;source=editors&amp;ust=1625206222417000&amp;usg=AOvVaw0e4hHQcne2mtxhb4IqNSQq">http://web.stanford.edu/class/cs107e/</a></td><td></td></tr><tr style="height: 20px"><th id="0R11" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">12</div></th><td class="s2 cyxy-trs-source" dir="ltr">programming<font class="cyxy-trs-target"> 编程</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs108</td><td class="s2 cyxy-trs-source" dir="ltr">Object-Oriented Systems Design<font class="cyxy-trs-target"> 面向对象的系统设计</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs108/&amp;sa=D&amp;source=editors&amp;ust=1625206222417000&amp;usg=AOvVaw1B8cWWCdEZrKzY6g2p288j">http://web.stanford.edu/class/cs108/</a></td><td></td></tr><tr style="height: 20px"><th id="0R12" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">13</div></th><td class="s2 cyxy-trs-source" dir="ltr">math<font class="cyxy-trs-target"> 数学</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs109</td><td class="s2 cyxy-trs-source" dir="ltr">Probability for Computer Scientists<font class="cyxy-trs-target"> 计算机科学家的概率</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs109/&amp;sa=D&amp;source=editors&amp;ust=1625206222417000&amp;usg=AOvVaw0Gq0jTfODmtYybvUNPiuNk">http://web.stanford.edu/class/cs109/</a></td><td></td></tr><tr style="height: 20px"><th id="0R13" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">14</div></th><td class="s2 cyxy-trs-source" dir="ltr">systems<font class="cyxy-trs-target"> 系统</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs110</td><td class="s2 cyxy-trs-source" dir="ltr">Principles of Computer Systems<font class="cyxy-trs-target"> 计算机系统原理</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs110/&amp;sa=D&amp;source=editors&amp;ust=1625206222417000&amp;usg=AOvVaw14lViDNPFqsTRt1--SnLtR">http://web.stanford.edu/class/cs110/</a></td><td></td></tr><tr style="height: 20px"><th id="0R14" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">15</div></th><td class="s2 cyxy-trs-source" dir="ltr">systems<font class="cyxy-trs-target"> 系统</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs110L</td><td class="s2 cyxy-trs-source" dir="ltr">Safety in Systems Programming<font class="cyxy-trs-target"> 系统编程中的安全性</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://web.stanford.edu/class/cs110l/&amp;sa=D&amp;source=editors&amp;ust=1625206222417000&amp;usg=AOvVaw176QzG2xGQIVmfl3MbrOoj">https://web.stanford.edu/class/cs110l/</a></td><td></td></tr><tr style="height: 20px"><th id="0R15" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">16</div></th><td class="s2 cyxy-trs-source" dir="ltr">systems<font class="cyxy-trs-target"> 系统</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs111</td><td class="s2 cyxy-trs-source" dir="ltr">Operating Systems Principles<font class="cyxy-trs-target"> 操作系统原理</font></td><td class="s4 softmerge" dir="ltr"><div class="softmerge-inner" style="width:520px;left:-1px"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://web.stanford.edu/~ouster/cs111-spring21/&amp;sa=D&amp;source=editors&amp;ust=1625206222417000&amp;usg=AOvVaw1EBTJ-sESS3xi_qtFB6oz4">https://web.stanford.edu/~ouster/cs111-spring21/</a></div></td><td class="s5"></td></tr><tr style="height: 20px"><th id="0R16" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">17</div></th><td class="s2 cyxy-trs-source" dir="ltr">AI<font class="cyxy-trs-target"> 人工智能</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs124</td><td class="s2 cyxy-trs-source" dir="ltr">From Languages to Information<font class="cyxy-trs-target"> 从语言到信息</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs124/&amp;sa=D&amp;source=editors&amp;ust=1625206222417000&amp;usg=AOvVaw1LYDCLyaz947v3alSk-Vg_">http://web.stanford.edu/class/cs124/</a></td><td></td></tr><tr style="height: 20px"><th id="0R17" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">18</div></th><td class="s2 cyxy-trs-source" dir="ltr">AI<font class="cyxy-trs-target"> 人工智能</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs129</td><td class="s2 cyxy-trs-source" dir="ltr">Applied Machine Learning<font class="cyxy-trs-target"> 应用机器学习</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://web.stanford.edu/class/cs129/&amp;sa=D&amp;source=editors&amp;ust=1625206222417000&amp;usg=AOvVaw0WtR7MryGQXtf0-48_KhiK">https://web.stanford.edu/class/cs129/</a></td><td></td></tr><tr style="height: 20px"><th id="0R18" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">19</div></th><td class="s2 cyxy-trs-source" dir="ltr">vision<font class="cyxy-trs-target"> 视觉</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs131</td><td class="s2 cyxy-trs-source" dir="ltr">Computer Vision: Foundations and Applications<font class="cyxy-trs-target"> 计算机视觉: 基础与应用</font></td><td class="s3 softmerge" dir="ltr"><div class="softmerge-inner" style="width:295px;left:-1px"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://vision.stanford.edu/teaching/cs131_fall2021/index.html&amp;sa=D&amp;source=editors&amp;ust=1625206222417000&amp;usg=AOvVaw0730VjQvOiB_UJY5NQztFf">http://vision.stanford.edu/teaching/cs131_fall2021/index.html</a></div></td><td class="s2" dir="ltr"> </td></tr><tr style="height: 20px"><th id="0R19" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">20</div></th><td class="s2 cyxy-trs-source" dir="ltr">systems<font class="cyxy-trs-target"> 系统</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs140</td><td class="s2 cyxy-trs-source" dir="ltr">Operating Systems<font class="cyxy-trs-target"> 操作系统</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://www.scs.stanford.edu/21wi-cs140/&amp;sa=D&amp;source=editors&amp;ust=1625206222418000&amp;usg=AOvVaw0Ex3P6-ReIpTRAJcebb6Ek">https://www.scs.stanford.edu/21wi-cs140/</a></td><td></td></tr><tr style="height: 20px"><th id="0R20" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">21</div></th><td class="s2 cyxy-trs-source" dir="ltr">systems<font class="cyxy-trs-target"> 系统</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs140E</td><td class="s2 cyxy-trs-source" dir="ltr">Embedded Operating Systems<font class="cyxy-trs-target"> 嵌入式操作系统</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://github.com/dddrrreee/cs140e-20win&amp;sa=D&amp;source=editors&amp;ust=1625206222418000&amp;usg=AOvVaw1nf9FR6OIrOICJTppaQ2vj">https://github.com/dddrrreee/cs140e-20win</a></td><td></td></tr><tr style="height: 20px"><th id="0R21" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">22</div></th><td class="s2 cyxy-trs-source" dir="ltr">web apps<font class="cyxy-trs-target"> 网络应用</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs142</td><td class="s2 cyxy-trs-source" dir="ltr">Web Applications<font class="cyxy-trs-target"> 网络应用程序</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs142/&amp;sa=D&amp;source=editors&amp;ust=1625206222418000&amp;usg=AOvVaw1wsLNRv6TSZBeVQRNDSsqp">http://web.stanford.edu/class/cs142/</a></td><td></td></tr><tr style="height: 20px"><th id="0R22" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">23</div></th><td class="s2 cyxy-trs-source" dir="ltr">systems<font class="cyxy-trs-target"> 系统</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs143</td><td class="s2 cyxy-trs-source" dir="ltr">Compilers<font class="cyxy-trs-target"> 编译器</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs143/&amp;sa=D&amp;source=editors&amp;ust=1625206222418000&amp;usg=AOvVaw2r0y2TCVG8OFZqBrP3rUlp">http://web.stanford.edu/class/cs143/</a></td><td></td></tr><tr style="height: 20px"><th id="0R23" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">24</div></th><td class="s2 cyxy-trs-source" dir="ltr">networking<font class="cyxy-trs-target"> 网络</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs144</td><td class="s2 cyxy-trs-source" dir="ltr">Introduction to Computer Networking<font class="cyxy-trs-target"> 计算机网络入门</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://cs144.github.io&amp;sa=D&amp;source=editors&amp;ust=1625206222418000&amp;usg=AOvVaw1dhqE2KALWvs9852UYofhU">https://cs144.github.io</a></td><td></td></tr><tr style="height: 20px"><th id="0R24" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">25</div></th><td class="s2 cyxy-trs-source" dir="ltr">databases<font class="cyxy-trs-target"> 数据库</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs145</td><td class="s2 cyxy-trs-source" dir="ltr">Data Management and Data Systems<font class="cyxy-trs-target"> 数据管理和数据系统</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://cs145-fa20.github.io&amp;sa=D&amp;source=editors&amp;ust=1625206222418000&amp;usg=AOvVaw1hGWlYApsj7F45ST7vXTzk">https://cs145-fa20.github.io</a></td><td></td></tr><tr style="height: 20px"><th id="0R25" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">26</div></th><td class="s2 cyxy-trs-source" dir="ltr">HCI<font class="cyxy-trs-target"> 人机交互界面</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs147</td><td class="s2 cyxy-trs-source" dir="ltr">Introduction to Human-Computer Interaction<font class="cyxy-trs-target"> 人机交互入门</font></td><td class="s3 softmerge" dir="ltr"><div class="softmerge-inner" style="width:295px;left:-1px"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://hci.stanford.edu/courses/cs147/2021/wi/index.html&amp;sa=D&amp;source=editors&amp;ust=1625206222418000&amp;usg=AOvVaw0zRpTpTuT2au6Qhg_LX3TM">https://hci.stanford.edu/courses/cs147/2021/wi/index.html</a></div></td><td class="s2" dir="ltr"> </td></tr><tr style="height: 20px"><th id="0R26" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">27</div></th><td class="s2 cyxy-trs-source" dir="ltr">graphics<font class="cyxy-trs-target"> 图形</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs148</td><td class="s2 cyxy-trs-source" dir="ltr">Introduction to Computer Graphics and Imaging<font class="cyxy-trs-target"> 计算机图形学和成像导论</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs148/&amp;sa=D&amp;source=editors&amp;ust=1625206222418000&amp;usg=AOvVaw19a2gCAqcarHCNA2NcxDWM">http://web.stanford.edu/class/cs148/</a></td><td></td></tr><tr style="height: 20px"><th id="0R27" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">28</div></th><td class="s2 cyxy-trs-source" dir="ltr">systems<font class="cyxy-trs-target"> 系统</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs149</td><td class="s2 cyxy-trs-source" dir="ltr">Parallel Computing<font class="cyxy-trs-target"> 并行计算</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://cs149.stanford.edu/fall20&amp;sa=D&amp;source=editors&amp;ust=1625206222418000&amp;usg=AOvVaw1qw__mYsWAsEX5PhgkzJ4G">http://cs149.stanford.edu/fall20</a></td><td></td></tr><tr style="height: 20px"><th id="0R28" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">29</div></th><td class="s2 cyxy-trs-source" dir="ltr">programming<font class="cyxy-trs-target"> 编程</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs151</td><td class="s2 cyxy-trs-source" dir="ltr">Logic Programming<font class="cyxy-trs-target"> 逻辑编程</font></td><td class="s3 softmerge" dir="ltr"><div class="softmerge-inner" style="width:295px;left:-1px"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://logicprogramming.stanford.edu/stanford/index.php&amp;sa=D&amp;source=editors&amp;ust=1625206222419000&amp;usg=AOvVaw3qmgocf4GfNj0NhmOztteV">http://logicprogramming.stanford.edu/stanford/index.php</a></div></td><td class="s2" dir="ltr"> </td></tr><tr style="height: 20px"><th id="0R29" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">30</div></th><td class="s2 cyxy-trs-source" dir="ltr">theory<font class="cyxy-trs-target"> 理论</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs154</td><td class="s2 cyxy-trs-source" dir="ltr">Introduction to the Theory of Computation<font class="cyxy-trs-target"> 美国计算理论协会简介</font></td><td class="s3 softmerge" dir="ltr"><div class="softmerge-inner" style="width:295px;left:-1px"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://omereingold.wordpress.com/cs-154-introduction-to-automata-and-complexity-theory/&amp;sa=D&amp;source=editors&amp;ust=1625206222419000&amp;usg=AOvVaw2o5VvYOKXNb8H8VtI6ik7E">https://omereingold.wordpress.com/cs-154-introduction-to-automata-and-complexity-theory/</a></div></td><td class="s2" dir="ltr"> </td></tr><tr style="height: 20px"><th id="0R30" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">31</div></th><td class="s2 cyxy-trs-source" dir="ltr">security<font class="cyxy-trs-target"> 安全</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs155</td><td class="s2 cyxy-trs-source" dir="ltr">Computer and Network Security<font class="cyxy-trs-target"> 电脑及网络保安</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://cs155.stanford.edu&amp;sa=D&amp;source=editors&amp;ust=1625206222419000&amp;usg=AOvVaw3jxfdm9dl8SnyRltjZzab2">https://cs155.stanford.edu</a></td><td></td></tr><tr style="height: 20px"><th id="0R31" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">32</div></th><td class="s2 cyxy-trs-source" dir="ltr">theory<font class="cyxy-trs-target"> 理论</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs157</td><td class="s2 cyxy-trs-source" dir="ltr">Computational Logic<font class="cyxy-trs-target"> 计算逻辑</font></td><td class="s4 softmerge" dir="ltr"><div class="softmerge-inner" style="width:520px;left:-1px"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://intrologic.stanford.edu/stanford/index.php&amp;sa=D&amp;source=editors&amp;ust=1625206222419000&amp;usg=AOvVaw3w0WNpW5O2QWHgxg9NQRD6">http://intrologic.stanford.edu/stanford/index.php</a></div></td><td class="s5"></td></tr><tr style="height: 20px"><th id="0R32" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">33</div></th><td class="s2 cyxy-trs-source" dir="ltr">algorithms<font class="cyxy-trs-target"> 算法</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs161</td><td class="s2 cyxy-trs-source" dir="ltr">Desgin and Analysis of Algorithms<font class="cyxy-trs-target"> 算法设计与分析</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://stanford-cs161.github.io/winter2021/&amp;sa=D&amp;source=editors&amp;ust=1625206222419000&amp;usg=AOvVaw3vyvnV69-9X_M33OkUGDVK">https://stanford-cs161.github.io/winter2021/</a></td><td></td></tr><tr style="height: 20px"><th id="0R33" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">34</div></th><td class="s2 cyxy-trs-source" dir="ltr">algorithms<font class="cyxy-trs-target"> 算法</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs166</td><td class="s2 cyxy-trs-source" dir="ltr">Data Structures<font class="cyxy-trs-target"> 数据结构</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs166/&amp;sa=D&amp;source=editors&amp;ust=1625206222419000&amp;usg=AOvVaw35Cks9qLbauVWCfDpthCiS">http://web.stanford.edu/class/cs166/</a></td><td></td></tr><tr style="height: 20px"><th id="0R34" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">35</div></th><td class="s2 cyxy-trs-source" dir="ltr">ethics<font class="cyxy-trs-target"> 伦理学</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs182</td><td class="s2 cyxy-trs-source" dir="ltr">Ethics, Public Policy, and Technological Change<font class="cyxy-trs-target"> 伦理、公共政策与技术变革</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://web.stanford.edu/class/cs182/&amp;sa=D&amp;source=editors&amp;ust=1625206222419000&amp;usg=AOvVaw1BonzLs4802uFkl8eOae-b">https://web.stanford.edu/class/cs182/</a></td><td></td></tr><tr style="height: 20px"><th id="0R35" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">36</div></th><td class="s2 cyxy-trs-source" dir="ltr">application<font class="cyxy-trs-target"> 应用</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs193U</td><td class="s2 cyxy-trs-source" dir="ltr">Video Game Development in C++ and Unreal Engine<font class="cyxy-trs-target"> 基于 c + + 和 Unreal 引擎的视频游戏开发</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://www.tomlooman.com/stanford-cs193u&amp;sa=D&amp;source=editors&amp;ust=1625206222419000&amp;usg=AOvVaw13mnmcet7CsJb8ei4fphcQ">https://www.tomlooman.com/stanford-cs193u</a></td><td></td></tr><tr style="height: 20px"><th id="0R36" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">37</div></th><td class="s2 cyxy-trs-source" dir="ltr">application<font class="cyxy-trs-target"> 应用</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs193P<font class="cyxy-trs-target"> 193p</font></td><td class="s2 cyxy-trs-source" dir="ltr">iOS Application Development<font class="cyxy-trs-target"> iOS 应用程序开发</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://cs193p.sites.stanford.edu&amp;sa=D&amp;source=editors&amp;ust=1625206222419000&amp;usg=AOvVaw1qqydqUydcWZ2kL5uAV_3F">https://cs193p.sites.stanford.edu</a></td><td></td></tr><tr style="height: 20px"><th id="0R37" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">38</div></th><td class="s2 cyxy-trs-source" dir="ltr">application<font class="cyxy-trs-target"> 应用</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs194A</td><td class="s2 cyxy-trs-source" dir="ltr">Android Programming Workshop<font class="cyxy-trs-target"> 安卓编程工作坊</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://web.stanford.edu/class/cs194a/&amp;sa=D&amp;source=editors&amp;ust=1625206222420000&amp;usg=AOvVaw0zGehV1RgeOW7_dhOkq8H5">https://web.stanford.edu/class/cs194a/</a></td><td></td></tr><tr style="height: 20px"><th id="0R38" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">39</div></th><td class="s2 cyxy-trs-source" dir="ltr">law<font class="cyxy-trs-target"> 法律</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs202</td><td class="s2 cyxy-trs-source" dir="ltr">Law for Computer Science Professionals<font class="cyxy-trs-target"> 计算机科学专业法</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs202/&amp;sa=D&amp;source=editors&amp;ust=1625206222420000&amp;usg=AOvVaw2ZcKe3VX7mY7ulbisa3SLD">http://web.stanford.edu/class/cs202/</a></td><td class="s2" dir="ltr"> </td></tr><tr style="height: 20px"><th id="0R39" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">40</div></th><td class="s2 cyxy-trs-source" dir="ltr">law<font class="cyxy-trs-target"> 法律</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs204</td><td class="s2 cyxy-trs-source" dir="ltr">Computational Law<font class="cyxy-trs-target"> 计算法则</font></td><td class="s3 softmerge" dir="ltr"><div class="softmerge-inner" style="width:295px;left:-1px"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://complaw.stanford.edu/complaw/public/lessons.php&amp;sa=D&amp;source=editors&amp;ust=1625206222420000&amp;usg=AOvVaw0ygt1fj70kCy5vTdb-GG43">http://complaw.stanford.edu/complaw/public/lessons.php</a></div></td><td class="s2" dir="ltr"> </td></tr><tr style="height: 20px"><th id="0R40" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">41</div></th><td class="s2 cyxy-trs-source" dir="ltr">law<font class="cyxy-trs-target"> 法律</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs209</td><td class="s2 cyxy-trs-source" dir="ltr">Law, Bias &amp; Algorithms<font class="cyxy-trs-target"> 法律，偏见和算法</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://5harad.com/mse330/&amp;sa=D&amp;source=editors&amp;ust=1625206222420000&amp;usg=AOvVaw0AjifNPWkGyKhFrcZi6xn0">https://5harad.com/mse330/</a></td><td></td></tr><tr style="height: 20px"><th id="0R41" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">42</div></th><td class="s2 cyxy-trs-source" dir="ltr">algorithms<font class="cyxy-trs-target"> 算法</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs205L</td><td class="s2 softmerge" dir="ltr"><div class="softmerge-inner cyxy-trs-source" style="width:347px;left:-1px">Continuous Mathematical Methods with an Emphases on ML<font class="cyxy-trs-target"> 以机器学习为重点的连续数学方法</font></div></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs205l/&amp;sa=D&amp;source=editors&amp;ust=1625206222420000&amp;usg=AOvVaw1Tux3zi3zPVwKP2cDGxMZt">http://web.stanford.edu/class/cs205l/</a></td><td></td></tr><tr style="height: 20px"><th id="0R42" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">43</div></th><td class="s2 cyxy-trs-source" dir="ltr">AI<font class="cyxy-trs-target"> 人工智能</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs221</td><td class="s2 cyxy-trs-source" dir="ltr">Artificial Intelligence: Principles &amp; Techniques<font class="cyxy-trs-target"> 人工智能: 原理与技术</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://stanford-cs221.github.io/spring2021/&amp;sa=D&amp;source=editors&amp;ust=1625206222420000&amp;usg=AOvVaw2vPlolCnhRRH9R2Pe11BqU">https://stanford-cs221.github.io/spring2021/</a></td><td></td></tr><tr style="height: 20px"><th id="0R43" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">44</div></th><td class="s2 cyxy-trs-source" dir="ltr">robotics<font class="cyxy-trs-target"> 机器人学</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs223A</td><td class="s2 cyxy-trs-source" dir="ltr">Introduction to Robotics<font class="cyxy-trs-target"> 机器人入门</font></td><td class="s3 softmerge" dir="ltr"><div class="softmerge-inner" style="width:295px;left:-1px"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://cs.stanford.edu/groups/manips/teaching/cs223a/&amp;sa=D&amp;source=editors&amp;ust=1625206222420000&amp;usg=AOvVaw2C26xq4-1dHojexpKmxX74">https://cs.stanford.edu/groups/manips/teaching/cs223a/</a></div></td><td class="s2" dir="ltr"> </td></tr><tr style="height: 20px"><th id="0R44" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">45</div></th><td class="s2 cyxy-trs-source" dir="ltr">AI<font class="cyxy-trs-target"> 人工智能</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs224N</td><td class="s2 cyxy-trs-source" dir="ltr">Natural Language Processing with Deep Learning<font class="cyxy-trs-target"> 基于深度学习的自然语言处理</font></td><td class="s3 softmerge" dir="ltr"><div class="softmerge-inner" style="width:295px;left:-1px"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://cs.stanford.edu/courses/schedules/2020-2021.winter.php&amp;sa=D&amp;source=editors&amp;ust=1625206222420000&amp;usg=AOvVaw1es14JEa-OQV771qV6sOoI">https://cs.stanford.edu/courses/schedules/2020-2021.winter.php</a></div></td><td class="s2" dir="ltr"> </td></tr><tr style="height: 20px"><th id="0R45" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">46</div></th><td class="s2 cyxy-trs-source" dir="ltr">AI<font class="cyxy-trs-target"> 人工智能</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs224S</td><td class="s2 cyxy-trs-source" dir="ltr">Spoken Language Processing<font class="cyxy-trs-target"> 口语处理</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs224s/&amp;sa=D&amp;source=editors&amp;ust=1625206222420000&amp;usg=AOvVaw3Rv6dWrOw7qstSdjMCgLV1">http://web.stanford.edu/class/cs224s/</a></td><td></td></tr><tr style="height: 20px"><th id="0R46" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">47</div></th><td class="s2 cyxy-trs-source" dir="ltr">AI<font class="cyxy-trs-target"> 人工智能</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs224W</td><td class="s2 cyxy-trs-source" dir="ltr">Machine Learning with Graphs<font class="cyxy-trs-target"> 图形机器学习</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs224w/&amp;sa=D&amp;source=editors&amp;ust=1625206222421000&amp;usg=AOvVaw3kIcLJTg4VIbkLDi7nn3wT">http://web.stanford.edu/class/cs224w/</a></td><td class="s2" dir="ltr"> </td></tr><tr style="height: 20px"><th id="0R47" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">48</div></th><td class="s2 cyxy-trs-source" dir="ltr">robotics<font class="cyxy-trs-target"> 机器人学</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs225A</td><td class="s2 cyxy-trs-source" dir="ltr">Experimental Robotics<font class="cyxy-trs-target"> 实验机器人技术</font></td><td class="s3 softmerge" dir="ltr"><div class="softmerge-inner" style="width:295px;left:-1px"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://cs.stanford.edu/groups/manips/teaching/cs225a/&amp;sa=D&amp;source=editors&amp;ust=1625206222421000&amp;usg=AOvVaw1YsC4lf4OgaXo1hmmz9MXA">https://cs.stanford.edu/groups/manips/teaching/cs225a/</a></div></td><td class="s2" dir="ltr"> </td></tr><tr style="height: 20px"><th id="0R48" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">49</div></th><td class="s2 cyxy-trs-source" dir="ltr">AI<font class="cyxy-trs-target"> 人工智能</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs228</td><td class="s2 cyxy-trs-source" dir="ltr">Probabilistic Graphical Models<font class="cyxy-trs-target"> 概率图模型</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://cs228.stanford.edu&amp;sa=D&amp;source=editors&amp;ust=1625206222421000&amp;usg=AOvVaw3CMZ5ClJTBrMeGxjiVQm9l">https://cs228.stanford.edu</a></td><td class="s2" dir="ltr"></td></tr><tr style="height: 20px"><th id="0R49" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">50</div></th><td class="s2 cyxy-trs-source" dir="ltr">AI<font class="cyxy-trs-target"> 人工智能</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs229</td><td class="s2 cyxy-trs-source" dir="ltr">Machine Learning<font class="cyxy-trs-target"> 机器学习</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://cs229.stanford.edu&amp;sa=D&amp;source=editors&amp;ust=1625206222421000&amp;usg=AOvVaw0BhqjNwK97rphjk1vhy8b8">http://cs229.stanford.edu</a></td><td></td></tr><tr style="height: 20px"><th id="0R50" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">51</div></th><td class="s2 cyxy-trs-source" dir="ltr">AI<font class="cyxy-trs-target"> 人工智能</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs230</td><td class="s2 cyxy-trs-source" dir="ltr">Deep Learning<font class="cyxy-trs-target"> 深度学习</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://cs230.stanford.edu&amp;sa=D&amp;source=editors&amp;ust=1625206222421000&amp;usg=AOvVaw0e_G4EjNzjoFVXoYZY7ICq">http://cs230.stanford.edu</a></td><td></td></tr><tr style="height: 20px"><th id="0R51" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">52</div></th><td class="s2 cyxy-trs-source" dir="ltr">AI<font class="cyxy-trs-target"> 人工智能</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs231N</td><td class="s2 cyxy-trs-source" dir="ltr">Convolutional Neural Networks for Visual Recognition<font class="cyxy-trs-target"> 面向视觉识别的卷积神经网络</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://cs231n.stanford.edu&amp;sa=D&amp;source=editors&amp;ust=1625206222421000&amp;usg=AOvVaw1XPSCztlnzECtMMRaQv02j">http://cs231n.stanford.edu</a></td><td></td></tr><tr style="height: 20px"><th id="0R52" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">53</div></th><td class="s2 cyxy-trs-source" dir="ltr">graphics<font class="cyxy-trs-target"> 图形</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs233</td><td class="s2 cyxy-trs-source" dir="ltr">Geometric and Topological Data Analysis<font class="cyxy-trs-target"> 几何和拓扑数据分析</font></td><td class="s3 softmerge" dir="ltr"><div class="softmerge-inner" style="width:295px;left:-1px"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://graphics.stanford.edu/courses/cs233-21-spring/&amp;sa=D&amp;source=editors&amp;ust=1625206222421000&amp;usg=AOvVaw11ZF0kau4_q-yu-igq5BFI">http://graphics.stanford.edu/courses/cs233-21-spring/</a></div></td><td class="s2" dir="ltr"> </td></tr><tr style="height: 20px"><th id="0R53" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">54</div></th><td class="s2 cyxy-trs-source" dir="ltr">AI<font class="cyxy-trs-target"> 人工智能</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs234</td><td class="s2 cyxy-trs-source" dir="ltr">Reinforcement Learning<font class="cyxy-trs-target"> 强化学习</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs234/index.html&amp;sa=D&amp;source=editors&amp;ust=1625206222421000&amp;usg=AOvVaw0ouqhz201E0NqrsbaRCJff">http://web.stanford.edu/class/cs234/index.html</a></td><td></td></tr><tr style="height: 20px"><th id="0R54" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">55</div></th><td class="s2 cyxy-trs-source" dir="ltr">AI<font class="cyxy-trs-target"> 人工智能</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs236G</td><td class="s2 cyxy-trs-source" dir="ltr">Generative Adversarial Networks<font class="cyxy-trs-target"> 生成对抗性网络</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://cs236g.stanford.edu&amp;sa=D&amp;source=editors&amp;ust=1625206222422000&amp;usg=AOvVaw2n11cARnGbBzR6qBV6iK8H">https://cs236g.stanford.edu</a></td><td></td></tr><tr style="height: 20px"><th id="0R55" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">56</div></th><td class="s2 cyxy-trs-source" dir="ltr">AI<font class="cyxy-trs-target"> 人工智能</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs231A</td><td class="s2 cyxy-trs-source" dir="ltr">Computer Vision: 3D Reconstruction to Recognition<font class="cyxy-trs-target"> 计算机视觉: 从三维重建到识别</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs231a/&amp;sa=D&amp;source=editors&amp;ust=1625206222422000&amp;usg=AOvVaw0ZJJgdDitjZK7srmI_UqIv">http://web.stanford.edu/class/cs231a/</a></td><td></td></tr><tr style="height: 20px"><th id="0R56" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">57</div></th><td class="s2 cyxy-trs-source" dir="ltr">robotics<font class="cyxy-trs-target"> 机器人学</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs237B</td><td class="s2 cyxy-trs-source" dir="ltr">Principles of Robot Autonomy II<font class="cyxy-trs-target"> 机器人自主原理 II</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs237b/&amp;sa=D&amp;source=editors&amp;ust=1625206222422000&amp;usg=AOvVaw1jWyMM3NZfCBzQ5FWlVCJK">http://web.stanford.edu/class/cs237b/</a></td><td></td></tr><tr style="height: 20px"><th id="0R57" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">58</div></th><td class="s2 cyxy-trs-source" dir="ltr">AI<font class="cyxy-trs-target"> 人工智能</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs238</td><td class="s2 cyxy-trs-source" dir="ltr">Decision Making under Uncertainty<font class="cyxy-trs-target"> 不确定条件下的决策</font></td><td class="s4 softmerge" dir="ltr"><div class="softmerge-inner" style="width:520px;left:-1px"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://web.stanford.edu/class/aa228/cgi-bin/wp/&amp;sa=D&amp;source=editors&amp;ust=1625206222422000&amp;usg=AOvVaw3MVc4wr_z8VR6amUcm4iIU">https://web.stanford.edu/class/aa228/cgi-bin/wp/</a></div></td><td class="s5"></td></tr><tr style="height: 20px"><th id="0R58" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">59</div></th><td class="s2 cyxy-trs-source" dir="ltr">systems<font class="cyxy-trs-target"> 系统</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs240</td><td class="s2 cyxy-trs-source" dir="ltr">Advanced Topics in Operating Systems<font class="cyxy-trs-target"> 操作系统高级主题</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs240/&amp;sa=D&amp;source=editors&amp;ust=1625206222422000&amp;usg=AOvVaw0D9grjEQ3dWVnqszApbbap">http://web.stanford.edu/class/cs240/</a></td><td></td></tr><tr style="height: 20px"><th id="0R59" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">60</div></th><td class="s2 cyxy-trs-source" dir="ltr">programming<font class="cyxy-trs-target"> 编程</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs242</td><td class="s2 cyxy-trs-source" dir="ltr">Programming Languages<font class="cyxy-trs-target"> 编程语言</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://web.stanford.edu/class/cs242/&amp;sa=D&amp;source=editors&amp;ust=1625206222422000&amp;usg=AOvVaw02aHffmxJMXtzcMk3YtG0j">https://web.stanford.edu/class/cs242/</a></td><td></td></tr><tr style="height: 20px"><th id="0R60" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">61</div></th><td class="s2 cyxy-trs-source" dir="ltr">systems<font class="cyxy-trs-target"> 系统</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs243</td><td class="s2 cyxy-trs-source" dir="ltr">Program Analysis and Optimization<font class="cyxy-trs-target"> 程序分析与优化</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://suif.stanford.edu/~courses/cs243/&amp;sa=D&amp;source=editors&amp;ust=1625206222422000&amp;usg=AOvVaw2BGiyFNP-OoAHfFX3S2_9g">https://suif.stanford.edu/~courses/cs243/</a></td><td></td></tr><tr style="height: 20px"><th id="0R61" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">62</div></th><td class="s2 cyxy-trs-source" dir="ltr">big data<font class="cyxy-trs-target"> 大数据</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs246</td><td class="s2 cyxy-trs-source" dir="ltr">Mining Massive Datasets<font class="cyxy-trs-target"> 挖掘海量数据集</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs246/&amp;sa=D&amp;source=editors&amp;ust=1625206222422000&amp;usg=AOvVaw3tSa6GxhRtMFYaI4Vac3OU">http://web.stanford.edu/class/cs246/</a></td><td></td></tr><tr style="height: 20px"><th id="0R62" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">63</div></th><td class="s2 cyxy-trs-source" dir="ltr">databases<font class="cyxy-trs-target"> 数据库</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs245</td><td class="s2 cyxy-trs-source" dir="ltr">Principles of Data-Intensive Systems<font class="cyxy-trs-target"> 数据密集型系统的原理</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs245/%23schedule&amp;sa=D&amp;source=editors&amp;ust=1625206222423000&amp;usg=AOvVaw1Llsfjb77GKnKs_jLV5PEH">http://web.stanford.edu/class/cs245/</a></td><td></td></tr><tr style="height: 20px"><th id="0R63" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">64</div></th><td class="s2 cyxy-trs-source" dir="ltr">graphics<font class="cyxy-trs-target"> 图形</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs248</td><td class="s2 cyxy-trs-source" dir="ltr">Interactive Computer Graphics<font class="cyxy-trs-target"> 互动计算机图形学</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://cs248.stanford.edu/winter21&amp;sa=D&amp;source=editors&amp;ust=1625206222423000&amp;usg=AOvVaw22nMQjQYQ2xIpkPYuPD0YI">http://cs248.stanford.edu/winter21</a></td><td></td></tr><tr style="height: 20px"><th id="0R64" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">65</div></th><td class="s2 softmerge" dir="ltr"><div class="softmerge-inner cyxy-trs-source" style="width:111px;left:-1px">application/blockchain<font class="cyxy-trs-target"> 应用程序/区块链</font></div></td><td class="s2 cyxy-trs-source" dir="ltr">cs251</td><td class="s2 cyxy-trs-source" dir="ltr">Cryptocurrencies and Blockchain Technologies<font class="cyxy-trs-target"> 加密货币和区块链技术</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://cs251.stanford.edu&amp;sa=D&amp;source=editors&amp;ust=1625206222423000&amp;usg=AOvVaw2YNyEwzWGVr9y5Z_PI7q5n">https://cs251.stanford.edu</a></td><td></td></tr><tr style="height: 20px"><th id="0R65" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">66</div></th><td class="s2 cyxy-trs-source" dir="ltr">theory<font class="cyxy-trs-target"> 理论</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs254</td><td class="s2 cyxy-trs-source" dir="ltr">Computational Complexity<font class="cyxy-trs-target"> 计算复杂性</font></td><td class="s3 softmerge" dir="ltr"><div class="softmerge-inner" style="width:295px;left:-1px"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://theory.stanford.edu/~liyang/teaching/complexity21.html&amp;sa=D&amp;source=editors&amp;ust=1625206222423000&amp;usg=AOvVaw0EMAfh-punxo8WAm47qA7w">http://theory.stanford.edu/~liyang/teaching/complexity21.html</a></div></td><td class="s2" dir="ltr"> </td></tr><tr style="height: 20px"><th id="0R66" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">67</div></th><td class="s2 cyxy-trs-source" dir="ltr">theory<font class="cyxy-trs-target"> 理论</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs254B</td><td class="s2 cyxy-trs-source" dir="ltr">Computational Complexity II<font class="cyxy-trs-target"> 计算复杂度 II</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://cs254b.stanford.edu&amp;sa=D&amp;source=editors&amp;ust=1625206222423000&amp;usg=AOvVaw0GZvqneBh90Qgzi6blDHrq">http://cs254b.stanford.edu</a></td><td class="s2" dir="ltr"></td></tr><tr style="height: 20px"><th id="0R67" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">68</div></th><td class="s2 cyxy-trs-source" dir="ltr">security<font class="cyxy-trs-target"> 安全</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs255</td><td class="s2 cyxy-trs-source" dir="ltr">Introduction to Cryptography<font class="cyxy-trs-target"> 密码学概论</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://crypto.stanford.edu/~dabo/cs255/&amp;sa=D&amp;source=editors&amp;ust=1625206222423000&amp;usg=AOvVaw3CwnHqNTP8IpFfLjYAz6Ht">https://crypto.stanford.edu/~dabo/cs255/</a></td><td class="s2" dir="ltr"></td></tr><tr style="height: 20px"><th id="0R68" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">69</div></th><td class="s2 cyxy-trs-source" dir="ltr">algorithms<font class="cyxy-trs-target"> 算法</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs261</td><td class="s2 cyxy-trs-source" dir="ltr">Optimization and Algorithmic Paradigm<font class="cyxy-trs-target"> 优化与算法范式</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/~ashishg/cs261/&amp;sa=D&amp;source=editors&amp;ust=1625206222423000&amp;usg=AOvVaw322m5z03KBEI6dkqBYpQy4">http://web.stanford.edu/~ashishg/cs261/</a></td><td class="s2" dir="ltr"></td></tr><tr style="height: 20px"><th id="0R69" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">70</div></th><td class="s2 cyxy-trs-source" dir="ltr">theory<font class="cyxy-trs-target"> 理论</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs265</td><td class="s2 cyxy-trs-source" dir="ltr">Randomized Algorithms and Probabilistic Analysis<font class="cyxy-trs-target"> 随机算法与概率分析</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs265/&amp;sa=D&amp;source=editors&amp;ust=1625206222423000&amp;usg=AOvVaw3klUHak8mW0m8howdcI5XC">http://web.stanford.edu/class/cs265/</a></td><td></td></tr><tr style="height: 20px"><th id="0R70" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">71</div></th><td class="s2 cyxy-trs-source" dir="ltr">???</td><td class="s2 cyxy-trs-source" dir="ltr">cs269I</td><td class="s2 cyxy-trs-source" dir="ltr">Incentives in Computer Science<font class="cyxy-trs-target"> 计算机科学中的激励机制</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://timroughgarden.org/f18/f18.html&amp;sa=D&amp;source=editors&amp;ust=1625206222423000&amp;usg=AOvVaw0wcPFNKpzi-PV-fTjg4xSW">http://timroughgarden.org/f18/f18.html</a></td><td></td></tr><tr style="height: 20px"><th id="0R71" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">72</div></th><td class="s2 cyxy-trs-source" dir="ltr">application/bio<font class="cyxy-trs-target"> 申请/简历</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs273a</td><td class="s2 cyxy-trs-source" dir="ltr">The Human Genome Source Code<font class="cyxy-trs-target"> 人类基因组源代码</font></td><td class="s3 softmerge" dir="ltr"><div class="softmerge-inner" style="width:295px;left:-1px"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://web.stanford.edu/class/cs273a/cgi-bin/index.php&amp;sa=D&amp;source=editors&amp;ust=1625206222424000&amp;usg=AOvVaw2crtN0j6nRt3ECDmDsbvnv">https://web.stanford.edu/class/cs273a/cgi-bin/index.php</a></div></td><td class="s2" dir="ltr"> </td></tr><tr style="height: 20px"><th id="0R72" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">73</div></th><td class="s2 cyxy-trs-source" dir="ltr">application/bio<font class="cyxy-trs-target"> 申请/简历</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs275</td><td class="s2 cyxy-trs-source" dir="ltr">Translational Bioinformatics<font class="cyxy-trs-target"> 转化生物信息学</font></td><td class="s4 softmerge" dir="ltr"><div class="softmerge-inner" style="width:520px;left:-1px"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://sites.google.com/site/bmi2172016/home&amp;sa=D&amp;source=editors&amp;ust=1625206222424000&amp;usg=AOvVaw3NNQNsxeAIC6ZJ3Q2temiu">https://sites.google.com/site/bmi2172016/home</a></div></td><td class="s6" dir="ltr"></td></tr><tr style="height: 20px"><th id="0R73" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">74</div></th><td class="s2 cyxy-trs-source" dir="ltr">???</td><td class="s2 cyxy-trs-source" dir="ltr">cs278</td><td class="s2 cyxy-trs-source" dir="ltr">Social Computing<font class="cyxy-trs-target"> 社会化计算</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://cs278.stanford.edu&amp;sa=D&amp;source=editors&amp;ust=1625206222424000&amp;usg=AOvVaw3pollwclUkR-LsRcl1CfUy">http://cs278.stanford.edu</a></td><td class="s2" dir="ltr"></td></tr><tr style="height: 20px"><th id="0R74" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">75</div></th><td class="s2 cyxy-trs-source" dir="ltr">application/bio<font class="cyxy-trs-target"> 申请/简历</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs279</td><td class="s2 softmerge" dir="ltr"><div class="softmerge-inner cyxy-trs-source" style="width:347px;left:-1px">Computational Biology: Structure and Organization of Biomolecules and Cells<font class="cyxy-trs-target"> 计算生物学: 生物分子和细胞的结构和组织</font></div></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs279/&amp;sa=D&amp;source=editors&amp;ust=1625206222424000&amp;usg=AOvVaw1szop62dHWStel_4aZ7JsS">http://web.stanford.edu/class/cs279/</a></td><td></td></tr><tr style="height: 20px"><th id="0R75" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">76</div></th><td class="s2 cyxy-trs-source" dir="ltr">robotics<font class="cyxy-trs-target"> 机器人学</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs326</td><td class="s2 cyxy-trs-source" dir="ltr">Topics in Advanced Robotic Manipulation<font class="cyxy-trs-target"> 高级机器人操作主题</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs326/&amp;sa=D&amp;source=editors&amp;ust=1625206222424000&amp;usg=AOvVaw1pD5pyp1X-_-MG6hHKTuDv">http://web.stanford.edu/class/cs326/</a></td><td></td></tr><tr style="height: 20px"><th id="0R76" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">77</div></th><td class="s2 cyxy-trs-source" dir="ltr">AI<font class="cyxy-trs-target"> 人工智能</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs329S<font class="cyxy-trs-target"> 329s</font></td><td class="s2 cyxy-trs-source" dir="ltr">Machine Learning Systems Design<font class="cyxy-trs-target"> 机器学习系统设计</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://stanford-cs329s.github.io/index.html&amp;sa=D&amp;source=editors&amp;ust=1625206222424000&amp;usg=AOvVaw2JJdx0z9uwtvsLRozro0tj">https://stanford-cs329s.github.io/index.html</a></td><td></td></tr><tr style="height: 20px"><th id="0R77" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">78</div></th><td class="s2 cyxy-trs-source" dir="ltr">AI<font class="cyxy-trs-target"> 人工智能</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs330</td><td class="s2 cyxy-trs-source" dir="ltr">Deep Multi-Task and Meta Learning<font class="cyxy-trs-target"> 深度多任务与元学习</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://cs330.stanford.edu&amp;sa=D&amp;source=editors&amp;ust=1625206222424000&amp;usg=AOvVaw0fey98GGjLQXssR0AH-5Gf">http://cs330.stanford.edu</a></td><td></td></tr><tr style="height: 20px"><th id="0R78" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">79</div></th><td class="s2 cyxy-trs-source" dir="ltr">graphics<font class="cyxy-trs-target"> 图形</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs348I</td><td class="s2 cyxy-trs-source" dir="ltr">Computer Graphics in the Era of AI<font class="cyxy-trs-target"> 人工智能时代的计算机图形学</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://cs348i.stanford.edu&amp;sa=D&amp;source=editors&amp;ust=1625206222424000&amp;usg=AOvVaw0TN09LByqkgD5WYYiaTGP5">http://cs348i.stanford.edu</a></td><td></td></tr><tr style="height: 20px"><th id="0R79" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">80</div></th><td class="s2 cyxy-trs-source" dir="ltr">graphics<font class="cyxy-trs-target"> 图形</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs348A</td><td class="s2 cyxy-trs-source" dir="ltr">Computer Graphics: Geometric Modeling/Processing<font class="cyxy-trs-target"> 计算机图形学: 几何模型/加工</font></td><td class="s3 softmerge" dir="ltr"><div class="softmerge-inner" style="width:295px;left:-1px"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://graphics.stanford.edu/courses/cs348a-21-winter/&amp;sa=D&amp;source=editors&amp;ust=1625206222424000&amp;usg=AOvVaw1TMqi19jg8T3LdAH329lTS">https://graphics.stanford.edu/courses/cs348a-21-winter/</a></div></td><td class="s2" dir="ltr"> </td></tr><tr style="height: 20px"><th id="0R80" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">81</div></th><td class="s2 cyxy-trs-source" dir="ltr">graphics<font class="cyxy-trs-target"> 图形</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs348B<font class="cyxy-trs-target"> 348b</font></td><td class="s2 cyxy-trs-source" dir="ltr">Image Synthesis Techniques<font class="cyxy-trs-target"> 图像合成技术</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://graphics.stanford.edu/courses/cs348b/&amp;sa=D&amp;source=editors&amp;ust=1625206222425000&amp;usg=AOvVaw1lmrRurv7YKbIz64GiAB4T">http://graphics.stanford.edu/courses/cs348b/</a></td><td class="s2" dir="ltr"></td></tr><tr style="height: 20px"><th id="0R81" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">82</div></th><td class="s2 cyxy-trs-source" dir="ltr">graphics<font class="cyxy-trs-target"> 图形</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs348C<font class="cyxy-trs-target"> 348c</font></td><td class="s2 cyxy-trs-source" dir="ltr">Computer Graphics: Animation and Simulation<font class="cyxy-trs-target"> 计算机图形学: 动画和模拟</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://graphics.stanford.edu/courses/cs348c/&amp;sa=D&amp;source=editors&amp;ust=1625206222425000&amp;usg=AOvVaw0et0YPFuTKGO6WNPhnAVEa">http://graphics.stanford.edu/courses/cs348c/</a></td><td class="s2" dir="ltr"></td></tr><tr style="height: 20px"><th id="0R82" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">83</div></th><td class="s2 cyxy-trs-source" dir="ltr">graphics<font class="cyxy-trs-target"> 图形</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs348K<font class="cyxy-trs-target"> 348k</font></td><td class="s2 cyxy-trs-source" dir="ltr">Visual Computing Systems<font class="cyxy-trs-target"> 可视化计算系统</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://cs348k.stanford.edu/spring21&amp;sa=D&amp;source=editors&amp;ust=1625206222425000&amp;usg=AOvVaw2XhIlVKtuTeAs8A4lhOoEb">http://cs348k.stanford.edu/spring21</a></td><td class="s2" dir="ltr"></td></tr><tr style="height: 20px"><th id="0R83" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">84</div></th><td class="s2 softmerge" dir="ltr"><div class="softmerge-inner cyxy-trs-source" style="width:111px;left:-1px">application/finance<font class="cyxy-trs-target"> 申请/财务</font></div></td><td class="s2 cyxy-trs-source" dir="ltr">cs349F</td><td class="s2 cyxy-trs-source" dir="ltr">Technologies for Financial Systems<font class="cyxy-trs-target"> 金融系统技术</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://web.stanford.edu/class/cs349f/&amp;sa=D&amp;source=editors&amp;ust=1625206222425000&amp;usg=AOvVaw3Rfi-CLGc1Rgtl5jHS3fb_">http://web.stanford.edu/class/cs349f/</a></td><td></td></tr><tr style="height: 20px"><th id="0R84" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">85</div></th><td class="s2 cyxy-trs-source" dir="ltr">security<font class="cyxy-trs-target"> 安全</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs355</td><td class="s2 cyxy-trs-source" dir="ltr">Topics in Cryptography<font class="cyxy-trs-target"> 密码学的主题</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://cs348k.stanford.edu/spring21&amp;sa=D&amp;source=editors&amp;ust=1625206222425000&amp;usg=AOvVaw2XhIlVKtuTeAs8A4lhOoEb">http://cs348k.stanford.edu/spring21</a></td><td></td></tr><tr style="height: 20px"><th id="0R85" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">86</div></th><td class="s2 cyxy-trs-source" dir="ltr">security<font class="cyxy-trs-target"> 安全</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs356</td><td class="s2 cyxy-trs-source" dir="ltr">Topics in Computer and Network Security<font class="cyxy-trs-target"> 计算机与网络安全专题</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://cs356.stanford.edu&amp;sa=D&amp;source=editors&amp;ust=1625206222425000&amp;usg=AOvVaw2pSP1S2BcBD9om0-02bOjq">https://cs356.stanford.edu</a></td><td></td></tr><tr style="height: 20px"><th id="0R86" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">87</div></th><td class="s2 cyxy-trs-source" dir="ltr">graphics<font class="cyxy-trs-target"> 图形</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs448B</td><td class="s2 cyxy-trs-source" dir="ltr">Visualization<font class="cyxy-trs-target"> 可视化</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://magrawala.github.io/cs448b-fa20/&amp;sa=D&amp;source=editors&amp;ust=1625206222425000&amp;usg=AOvVaw0cetIYUCeynKX0Rus4veDZ">https://magrawala.github.io/cs448b-fa20/</a></td><td></td></tr><tr style="height: 20px"><th id="0R87" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">88</div></th><td class="s2 cyxy-trs-source" dir="ltr">graphics<font class="cyxy-trs-target"> 图形</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs468</td><td class="s2 cyxy-trs-source" dir="ltr">Non-Euclidean Methods in Machine Learning<font class="cyxy-trs-target"> 机器学习中的非欧几里德方法</font></td><td class="s4 softmerge" dir="ltr"><div class="softmerge-inner" style="width:520px;left:-1px"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=http://graphics.stanford.edu/courses/cs468-20-fall/&amp;sa=D&amp;source=editors&amp;ust=1625206222425000&amp;usg=AOvVaw2NWh3hl5NsrafCbp9cu_6V">http://graphics.stanford.edu/courses/cs468-20-fall/</a></div></td><td class="s5"></td></tr><tr style="height: 20px"><th id="0R88" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px">89</div></th><td class="s2 cyxy-trs-source" dir="ltr">music<font class="cyxy-trs-target"> 音乐</font></td><td class="s2 cyxy-trs-source" dir="ltr">cs476a</td><td class="s2 cyxy-trs-source" dir="ltr">Music, Computing, and Design: The Art of Design<font class="cyxy-trs-target"> 音乐、计算机和设计: 设计艺术</font></td><td class="s3" dir="ltr"><a target="_blank" rel="noreferrer" href="https://www.google.com/url?q=https://ccrma.stanford.edu/courses/256a/&amp;sa=D&amp;source=editors&amp;ust=1625206222426000&amp;usg=AOvVaw1u75eGW6y_ut-kRjTZU6AI">https://ccrma.stanford.edu/courses/256a/</a></td><td></td></tr></tbody></table></div></div></div><script type="text/javascript" nonce="">activeSheetId = '0'; switchToSheet('0');</script><iframe id="nr-ext-rsicon" style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent; top: 90px; left: 438px;" src="./Stanford CS Curriculum - Google 云端硬盘_files/saved_resource.html"></iframe>
+<div class="cyxy-personal">
+    <a href="https://fanyi.caiyunapp.com/#/mine/vip/?utm_source=sala" target="_blank">
+        <img class="cyxy-favorite-btn" src="./Stanford CS Curriculum - Google 云端硬盘_files/default.png">
+    </a>
+</div>
+<div class="cyxy-function">
+    <img class="cyxy-favorite-btn" src="./Stanford CS Curriculum - Google 云端硬盘_files/fanyi-btn-hover.png">
+</div>
+<div class="cyxy-official">
+    <a href="https://fanyi.caiyunapp.com/?utm_source=sala" target="_blank">
+        <img class="cyxy-favorite-btn" src="./Stanford CS Curriculum - Google 云端硬盘_files/official.png">
+    </a>
+</div>
+<div class="cyxy-target-popup cyxy-trs-source" style="display: none;"><div style="margin: auto"><img id="cyxy-popup-left-slide" src="./Stanford CS Curriculum - Google 云端硬盘_files/left-slide.png" style="display: none;"> <div id="cyxy-popup-userinfo"><img id="cyxy-popup-avatar" src="./Stanford CS Curriculum - Google 云端硬盘_files/xiaoyilogo.jpg"> <div id="cyxy-popup-name-time"> <span id="cyxy-popup-name">彩云小译</span> <span id="cyxy-popup-time">刚刚</span></div></div><div id="cyxy-popup-favour"><img id="cyxy-popup-favour-img" src="./Stanford CS Curriculum - Google 云端硬盘_files/favour.png"><span id="cyxy-popup-favour-num">0</span></div><img id="cyxy-popup-right-slide" src="./Stanford CS Curriculum - Google 云端硬盘_files/right-slide.png" style="display: none;"></div></div><div class="cyxy-footer cyxy-trs-source" style="opacity: 0.88; display: block;"><div class="cyxy-footer-p">本网页由彩云小译<font id="cyxy-footer-translator"></font>翻译<div></div></div></div><iframe src="./Stanford CS Curriculum - Google 云端硬盘_files/web_translate_data_stat.html" style="display: none;"></iframe></body></html>
