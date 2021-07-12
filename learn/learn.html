@@ -1,15 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <title>知识目录</title>
-<!--    <style>-->
-<!--        body{background:url(./images/background-cover_bk.jpg) top left;-->
-<!--            background-size:100%;}-->
-<!--    </style>-->
-</head>
-<body>
-<li><a href="http://longtao.fun/" class="li">回到首页</a></li
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <meta charset="utf-8"/>-->
+<!--    <title>知识目录</title>-->
+<!--&lt;!&ndash;    <style>&ndash;&gt;-->
+<!--&lt;!&ndash;        body{background:url(./images/background-cover_bk.jpg) top left;&ndash;&gt;-->
+<!--&lt;!&ndash;            background-size:100%;}&ndash;&gt;-->
+<!--&lt;!&ndash;    </style>&ndash;&gt;-->
+<!--</head>-->
+<!--<body>-->
+<!--<li><a href="http://longtao.fun/" class="li">回到首页</a></li-->
+<!--    <li><a href="StanfordCSCurriculum/StanfordCSCurriculum.html" class="li">斯坦福课程目录</a></li>-->
+<!--</body>-->
+<!--</html>-->
+
+---
+layout: page
+title : 文章
+header : 所有文章
+group: navigation
+---
+{% include JB/setup %}
+
+{% assign posts_collate = site.posts %}
+
+<div>
     <li><a href="StanfordCSCurriculum/StanfordCSCurriculum.html" class="li">斯坦福课程目录</a></li>
-</body>
-</html>
+</div>
