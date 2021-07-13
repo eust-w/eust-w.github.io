@@ -16,8 +16,6 @@
 #### 联系我
 ![](/images/gongzhonghao.jpg)
 <p> 
-email：eustancewu@gmail.com     
-<p> 
-qq: 168776389
-微信公众号: 漫步科技人生
-<p> 
+Email：eustancewu@gmail.com     
+<p>qq: 168776389<p>
+<p>微信公众号: 漫步科技人生<p>
