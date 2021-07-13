@@ -19,5 +19,5 @@
 email：eustancewu@gmail.com     
 <p> 
 qq: 168776389
-微信公众号: 漫步科技认识
+微信公众号: 漫步科技人生
 <p> 
