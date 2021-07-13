@@ -11,10 +11,10 @@
 
 ### 打赏地址
 
-     ![](/images/payimg/alipayimg.jpg)         ![](/images/payimg/weipayimg.jpg)
+![](/images/payimg/alipayimg.jpg)         ![](/images/payimg/weipayimg.jpg)
 
 #### 联系我
-     ![](/images/gongzhonghao.jpg)
+![](/images/gongzhonghao.jpg)
 <p> 
 email：eustancewu@gmail.com     
 <p> 
