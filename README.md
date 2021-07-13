@@ -14,7 +14,7 @@
 支付宝:![](/images/payimg/alipayimg.jpg)    微信:![](/images/payimg/weipayimg.jpg)
 
 #### 联系我
-![](/images/gongzhonghao.jpg)
+公众号: ![](/images/gongzhonghao.jpg)
 <p> 
 email：eustancewu@gmail.com     
 <p> 
