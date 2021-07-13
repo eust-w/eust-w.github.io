@@ -11,7 +11,7 @@
 
 ### 打赏地址
 
-![](/images/payimg/alipayimg.jpg)![](/images/payimg/weipayimg.jpg)
+支付宝:![](/images/payimg/alipayimg.jpg)    微信:![](/images/payimg/weipayimg.jpg)
 
 #### 联系我
 ![](/images/gongzhonghao.jpg)
